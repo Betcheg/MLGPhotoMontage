@@ -73,32 +73,41 @@ public class LetTheMLGBegin extends ActionBarActivity {
 
             @Override
             public void onProgressChanged(SeekBar seekBar, int progresValue, boolean fromUser) {
-                progress = progresValue;
-                Log.i("progres:", Integer.toString(progresValue));
-                Log.i("hauteur doge:", Integer.toString(hDoge));
-                Log.i("largeur doge:", Integer.toString(lDoge));
-                Log.i("progresbar <1", Float.toString((float)(progresValue / 100)));
-
-                Log.i("nouvelle largeur doge:", Integer.toString((2 * lDoge * progresValue )/ 100) + 30);
-
-
                 tmp = (ImageView) findViewById(dernierId);
                 //LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams((lDoge*progresValue)+30,(hDoge*progresValue)+30);
                 //tmp.setLayoutParams(layoutParams);
                 tmp.requestLayout();
-                tmp.getLayoutParams().height = ((2 * hDoge * progresValue )/ 100) + 30;
-                tmp.getLayoutParams().width = ((2 * lDoge * progresValue )/ 100) + 30;
+                tmp.getLayoutParams().height = ((2 * hDoge * progresValue) / 100) + 30;
+                tmp.getLayoutParams().width = ((2 * lDoge * progresValue) / 100) + 30;
             }
 
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
-
             }
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-
             }
+
+
+        });
+
+        rotation.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+
+            int progress = 0;
+
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progresValue, boolean fromUser) {
+                tmp = (ImageView) findViewById(dernierId);
+                tmp.requestLayout();
+                tmp.setRotation((int)((progresValue*3.6)-180));
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {}
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {}
 
 
         });
