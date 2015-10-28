@@ -6,6 +6,7 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.LinearLayoutCompat;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -59,8 +60,11 @@ HorizontalScrollView horizontal;
             public void onClick(View v) {
                 //addMLG.setVisibility(View.VISIBLE);
                 //horizontal.setVisibility(View.GONE);
-                ImageView iv = new ImageView(getApplicationContext());
+                final ImageView iv = new ImageView(getApplicationContext());
                 iv.setImageResource(R.drawable.doge);
+                iv.setClickable(true);
+
+
                 RelativeLayout rl = (RelativeLayout) findViewById(R.id.rl);
                 RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(
                         RelativeLayout.LayoutParams.WRAP_CONTENT,
@@ -68,6 +72,23 @@ HorizontalScrollView horizontal;
 
                 lp.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
                 rl.addView(iv, lp);
+
+                iv.setOnTouchListener(new View.OnTouchListener() {
+                    @Override
+                    public boolean onTouch(View arg0, MotionEvent arg1) {
+                        switch (arg1.getAction()) {
+                            case MotionEvent.ACTION_DOWN: {
+                                iv.setY(160);
+                                break;
+                            }
+                            case MotionEvent.ACTION_CANCEL: {
+                                iv.setY(260);
+                                break;
+                            }
+                        }
+                        return true;
+                    }
+                });
             }
 
 
