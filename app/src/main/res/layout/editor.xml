@@ -16,15 +16,52 @@
         android:layout_weight="1" >
     </ImageView>
 
+    <SeekBar
+        android:id="@+id/taille"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:visibility="invisible"
+        />
+
+    <SeekBar
+        android:id="@+id/rotation"
+        android:rotation="270"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="-170dp"
+        android:visibility="invisible"
+        />
+
+    <RelativeLayout
+        android:id="@+id/menu"
+        android:layout_width="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_height="fill_parent">
+
     <Button
         android:id="@+id/b_addmontage"
         android:layout_alignParentBottom="true"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:layout_centerHorizontal="true"
         android:text="Add some MLG shit"
         />
 
+    <Button
+        android:id="@+id/b_savemontage"
+        android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_toRightOf="@id/b_addmontage"
+        android:text="Save"
+        />
+    </RelativeLayout>
     <HorizontalScrollView
         android:id="@+id/horizontal"
     android:layout_width="wrap_content"
@@ -45,17 +82,20 @@
             android:text="X"
             />
 
-    <Button
+        <Button
+            android:id="@+id/b_doge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Doge"
+            />
+
+        <Button
+        android:id="@+id/b_shrek"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Shrek"
             />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Doge"
-        />
 
     <Button
         android:layout_width="wrap_content"
