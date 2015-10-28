@@ -76,10 +76,14 @@ HorizontalScrollView horizontal;
                 iv.setOnTouchListener(new View.OnTouchListener() {
                     @Override
                     public boolean onTouch(View arg0, MotionEvent arg1) {
+
+                        int currentX = (int) arg1.getRawX();
+                        int currentY = (int) arg1.getRawY();
+
                         if (arg1.getAction() == MotionEvent.ACTION_MOVE) {
 
-                                iv.setX(arg1.getX());
-                                iv.setY(arg1.getY());
+                                iv.setX(currentX);
+                                iv.setY(currentY);
 
                             }
                         return true;
