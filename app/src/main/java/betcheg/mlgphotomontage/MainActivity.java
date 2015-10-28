@@ -28,7 +28,7 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
 
         button= (Button) findViewById(R.id.b_selectionner);
-        
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -68,10 +68,13 @@ public class MainActivity extends ActionBarActivity {
                 int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
                 imgDecodableString = cursor.getString(columnIndex);
                 cursor.close();
-                ImageView imgView = (ImageView) findViewById(R.id.imgView);
-                // Set the Image in ImageView after decoding the String
-                imgView.setImageBitmap(BitmapFactory
-                        .decodeFile(imgDecodableString));
+
+
+
+                Intent intent = new Intent(this, LetTheMLGBegin.class);
+                intent.putExtra("image", imgDecodableString);
+                startActivity(intent);
+
 
             } else {
                 Toast.makeText(this, "You haven't picked Image",
