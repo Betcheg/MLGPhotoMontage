@@ -25,12 +25,13 @@ import android.widget.Toast;
 public class LetTheMLGBegin extends ActionBarActivity {
 
     // Original image size, has to be hardcoded :'(
-    int lDoge = 225;
-    int hDoge = 225;
-    int lShrek = 190;
-    int hShrek = 169;
+    String[] tableauNom = {"Doge", "Shrek", "Joint", "8bitGlasses", "Fedora", "Sniper", "Hitmarker", "Snoop", "Illuminati", "Vuvuzela", "Frog"};
+    int[] tableauLargeur = {225, 190};
+    int[] tableauHauteur = {255, 169};
 
-    int dernierId = 0;
+    int idTableau;
+    int dernierIdImage = 0;
+
     String imageString;
     Button addMLG;
     Button annuler;
@@ -63,6 +64,7 @@ public class LetTheMLGBegin extends ActionBarActivity {
         rotation = (SeekBar) findViewById(R.id.rotation);
         menu = (RelativeLayout) findViewById(R.id.menu);
         horizontal = (HorizontalScrollView) findViewById(R.id.horizontal);
+
         ImageView imgView = (ImageView) findViewById(R.id.imgView);
         imgView.setImageBitmap(BitmapFactory.decodeFile(imageString));
 
@@ -73,12 +75,12 @@ public class LetTheMLGBegin extends ActionBarActivity {
 
             @Override
             public void onProgressChanged(SeekBar seekBar, int progresValue, boolean fromUser) {
-                tmp = (ImageView) findViewById(dernierId);
+                tmp = (ImageView) findViewById(dernierIdImage);
                 //LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams((lDoge*progresValue)+30,(hDoge*progresValue)+30);
                 //tmp.setLayoutParams(layoutParams);
                 tmp.requestLayout();
-                tmp.getLayoutParams().height = ((2 * hDoge * progresValue) / 100) + 30;
-                tmp.getLayoutParams().width = ((2 * lDoge * progresValue) / 100) + 30;
+                tmp.getLayoutParams().height = ((2 * tableauHauteur[idTableau] * progresValue) / 100) + 30;
+                tmp.getLayoutParams().width = ((2 * tableauLargeur[idTableau] * progresValue) / 100) + 30;
             }
 
             @Override
@@ -98,16 +100,18 @@ public class LetTheMLGBegin extends ActionBarActivity {
 
             @Override
             public void onProgressChanged(SeekBar seekBar, int progresValue, boolean fromUser) {
-                tmp = (ImageView) findViewById(dernierId);
+                tmp = (ImageView) findViewById(dernierIdImage);
                 tmp.requestLayout();
-                tmp.setRotation((int)((progresValue*3.6)-180));
+                tmp.setRotation((int) ((progresValue * 3.6) - 180));
             }
 
             @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {}
+            public void onStartTrackingTouch(SeekBar seekBar) {
+            }
 
             @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {}
+            public void onStopTrackingTouch(SeekBar seekBar) {
+            }
 
 
         });
@@ -127,6 +131,8 @@ public class LetTheMLGBegin extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 menu.setVisibility(View.VISIBLE);
+                taille.setVisibility(View.INVISIBLE);
+                rotation.setVisibility(View.INVISIBLE);
                 horizontal.setVisibility(View.GONE);
             }
 
@@ -135,90 +141,61 @@ public class LetTheMLGBegin extends ActionBarActivity {
         shrek.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                final ImageView iv = new ImageView(getApplicationContext());
-                iv.setImageResource(R.drawable.shrek);
-                iv.setClickable(true);
-                iv.setId(View.generateViewId());
-
-                RelativeLayout rl = (RelativeLayout) findViewById(R.id.rl);
-                RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(
-                        RelativeLayout.LayoutParams.WRAP_CONTENT,
-                        RelativeLayout.LayoutParams.WRAP_CONTENT);
-
-                lp.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
-                rl.addView(iv, lp);
-
-
-                iv.setOnTouchListener(new View.OnTouchListener() {
-                    @Override
-                    public boolean onTouch(View arg0, MotionEvent arg1) {
-
-                        int currentX = (int) arg1.getRawX();
-                        int currentY = (int) arg1.getRawY();
-
-                        if (arg1.getAction() == MotionEvent.ACTION_MOVE) {
-
-                            iv.setX(currentX - iv.getWidth() / 2);
-                            iv.setY(currentY - iv.getHeight() / 2);
-                        } else if (arg1.getAction() == MotionEvent.ACTION_DOWN) {
-                            dernierId = iv.getId();
-                            taille.setVisibility(View.VISIBLE);
-                            rotation.setVisibility(View.VISIBLE);
-
-                        }
-                        return true;
-                    }
-                });
+                imageTouchee(R.drawable.shrek);
             }
-
-
         });
 
 
         doge.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                final ImageView iv = new ImageView(getApplicationContext());
-                iv.setImageResource(R.drawable.doge);
-                iv.setClickable(true);
-                iv.setId(View.generateViewId());
-
-                RelativeLayout rl = (RelativeLayout) findViewById(R.id.rl);
-                RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(
-                        RelativeLayout.LayoutParams.WRAP_CONTENT,
-                        RelativeLayout.LayoutParams.WRAP_CONTENT);
-
-                lp.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
-                rl.addView(iv, lp);
-
-
-                iv.setOnTouchListener(new View.OnTouchListener() {
-                    @Override
-                    public boolean onTouch(View arg0, MotionEvent arg1) {
-
-                        int currentX = (int) arg1.getRawX();
-                        int currentY = (int) arg1.getRawY();
-
-                        if (arg1.getAction() == MotionEvent.ACTION_MOVE) {
-
-                            iv.setX(currentX - iv.getWidth() / 2);
-                            iv.setY(currentY - iv.getHeight() / 2);
-
-                        } else if (arg1.getAction() == MotionEvent.ACTION_DOWN) {
-                            dernierId = iv.getId();
-                            taille.setVisibility(View.VISIBLE);
-                            rotation.setVisibility(View.VISIBLE);
-
-                        }
-                        return true;
-                    }
-                });
+                imageTouchee(R.drawable.doge);
             }
-
-
         });
+    }
 
+    void imageTouchee(int id) {
+
+        if( id == R.drawable.doge) idTableau = 0;
+        else if( id == R.drawable.shrek) idTableau = 1;
+
+        menu.setVisibility(View.GONE);
+        horizontal.setVisibility(View.VISIBLE);
+
+        final ImageView iv = new ImageView(getApplicationContext());
+        iv.setImageResource(id);
+        iv.setClickable(true);
+        iv.setId(View.generateViewId());
+
+        RelativeLayout rl = (RelativeLayout) findViewById(R.id.rl);
+        RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(
+                RelativeLayout.LayoutParams.WRAP_CONTENT,
+                RelativeLayout.LayoutParams.WRAP_CONTENT);
+
+        lp.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
+        rl.addView(iv, lp);
+
+
+        iv.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View arg0, MotionEvent arg1) {
+
+                int currentX = (int) arg1.getRawX();
+                int currentY = (int) arg1.getRawY();
+
+                if (arg1.getAction() == MotionEvent.ACTION_MOVE) {
+
+                    iv.setX(currentX - iv.getWidth() / 2);
+                    iv.setY(currentY - iv.getHeight() / 2);
+
+                } else if (arg1.getAction() == MotionEvent.ACTION_DOWN) {
+                    dernierIdImage = iv.getId();
+                    taille.setVisibility(View.VISIBLE);
+                    rotation.setVisibility(View.VISIBLE);
+
+                }
+                return true;
+            }
+        });
     }
 }
