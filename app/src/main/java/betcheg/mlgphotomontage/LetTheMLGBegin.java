@@ -20,6 +20,8 @@ import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.Toast;
 
+import com.koushikdutta.ion.Ion;
+
 /**
  * Created by bastien on 28/10/15.
  */
@@ -180,6 +182,8 @@ public class LetTheMLGBegin extends ActionBarActivity {
         iv.setClickable(true);
         iv.setId(View.generateViewId());
 
+        Ion.with(iv).load("android.resource://betcheg.mlgphotomontage/" + id);
+
         RelativeLayout rl = (RelativeLayout) findViewById(R.id.rl);
         RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(
                 RelativeLayout.LayoutParams.WRAP_CONTENT,
@@ -200,6 +204,8 @@ public class LetTheMLGBegin extends ActionBarActivity {
 
                     iv.setX(currentX - iv.getWidth() / 2);
                     iv.setY(currentY - iv.getHeight() / 2);
+                    rotation.bringToFront();
+                    taille.bringToFront();
 
                 } else if (arg1.getAction() == MotionEvent.ACTION_DOWN) {
                     dernierIdImage = iv.getId();

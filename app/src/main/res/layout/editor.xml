@@ -76,7 +76,7 @@
                 android:id="@+id/b_annuler"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="<-" />
+                android:text="Back" />
 
             <Button
                 android:id="@+id/b_doge"
