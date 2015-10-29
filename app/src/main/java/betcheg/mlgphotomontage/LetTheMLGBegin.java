@@ -209,6 +209,8 @@ public class LetTheMLGBegin extends ActionBarActivity {
                     horizontal.setVisibility(View.VISIBLE);
                     iv.bringToFront();
 
+                } else if (arg1.getAction() == MotionEvent.AXIS_TOUCH_MAJOR) {
+                    iv.setVisibility(View.GONE);
                 }
                 return true;
             }
