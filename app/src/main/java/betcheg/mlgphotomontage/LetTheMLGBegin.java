@@ -13,6 +13,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.HorizontalScrollView;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -25,9 +26,9 @@ import android.widget.Toast;
 public class LetTheMLGBegin extends ActionBarActivity {
 
     // Original image size, has to be hardcoded :'(
-    String[] tableauNom = {"Doge", "Shrek", "Joint", "8bitGlasses", "Fedora", "Sniper", "Hitmarker", "Snoop", "Illuminati", "Vuvuzela", "Frog"};
-    int[] tableauLargeur = {225, 190};
-    int[] tableauHauteur = {255, 169};
+    String[] tableauNom = {"Doge", "Shrek", "Snoop", "Joint", "8bitGlasses", "Fedora", "Sniper", "Hitmarker", "Illuminati", "Vuvuzela", "Frog"};
+    int[] tableauLargeur = {225, 190, 290};
+    int[] tableauHauteur = {255, 169, 292};
 
     int idTableau;
     int dernierIdImage = 0;
@@ -37,6 +38,7 @@ public class LetTheMLGBegin extends ActionBarActivity {
     Button annuler;
     Button doge;
     Button shrek;
+    Button snoop;
     ImageView tmp;
     RelativeLayout menu;
 
@@ -59,6 +61,7 @@ public class LetTheMLGBegin extends ActionBarActivity {
         annuler = (Button) findViewById(R.id.b_annuler);
         doge = (Button) findViewById(R.id.b_doge);
         shrek = (Button) findViewById(R.id.b_shrek);
+        snoop = (Button) findViewById(R.id.b_snoop);
 
         taille = (SeekBar) findViewById(R.id.taille);
         rotation = (SeekBar) findViewById(R.id.rotation);
@@ -120,7 +123,7 @@ public class LetTheMLGBegin extends ActionBarActivity {
         addMLG.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                menu.setVisibility(View.GONE);
+                menu.setVisibility(View.INVISIBLE);
                 horizontal.setVisibility(View.VISIBLE);
             }
 
@@ -133,7 +136,7 @@ public class LetTheMLGBegin extends ActionBarActivity {
                 menu.setVisibility(View.VISIBLE);
                 taille.setVisibility(View.INVISIBLE);
                 rotation.setVisibility(View.INVISIBLE);
-                horizontal.setVisibility(View.GONE);
+                horizontal.setVisibility(View.INVISIBLE);
             }
 
         });
@@ -152,14 +155,24 @@ public class LetTheMLGBegin extends ActionBarActivity {
                 imageTouchee(R.drawable.doge);
             }
         });
+
+
+        snoop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                imageTouchee(R.drawable.snoop);
+            }
+        });
+
     }
 
     void imageTouchee(int id) {
 
         if( id == R.drawable.doge) idTableau = 0;
         else if( id == R.drawable.shrek) idTableau = 1;
+        else if( id == R.drawable.snoop) idTableau = 2;
 
-        menu.setVisibility(View.GONE);
+        menu.setVisibility(View.INVISIBLE);
         horizontal.setVisibility(View.VISIBLE);
 
         final ImageView iv = new ImageView(getApplicationContext());
@@ -192,6 +205,9 @@ public class LetTheMLGBegin extends ActionBarActivity {
                     dernierIdImage = iv.getId();
                     taille.setVisibility(View.VISIBLE);
                     rotation.setVisibility(View.VISIBLE);
+                    menu.setVisibility(View.INVISIBLE);
+                    horizontal.setVisibility(View.VISIBLE);
+                    iv.bringToFront();
 
                 }
                 return true;

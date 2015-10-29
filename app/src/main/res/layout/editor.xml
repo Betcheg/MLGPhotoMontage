@@ -1,127 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
-    android:id="@+id/rl"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:id="@+id/rl"
+    android:background="@color/eucalyptus"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    >
+    android:orientation="vertical">
 
 
     <ImageView
         android:id="@+id/imgView"
         android:layout_width="fill_parent"
-        android:layout_height="match_parent"
-        android:scaleType="fitXY"
-        android:layout_alignParentBottom="true"
-        android:layout_weight="1" >
-    </ImageView>
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/horizontal"
+        android:layout_weight="1"
+        android:scaleType="fitXY"></ImageView>
 
     <SeekBar
         android:id="@+id/taille"
-        android:layout_height="wrap_content"
         android:layout_width="fill_parent"
-        android:layout_marginTop="16dp"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="32dp"
         android:layout_marginRight="32dp"
-        android:visibility="invisible"
-        />
+        android:layout_marginTop="16dp"
+        android:visibility="invisible" />
 
     <SeekBar
         android:id="@+id/rotation"
-        android:rotation="270"
         android:layout_width="380dp"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
         android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
         android:layout_marginRight="-170dp"
-        android:visibility="invisible"
-        />
+        android:rotation="270"
+        android:visibility="invisible" />
 
     <RelativeLayout
         android:id="@+id/menu"
         android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_height="fill_parent">
+        android:layout_centerHorizontal="true">
 
-    <Button
-        android:id="@+id/b_addmontage"
-        android:layout_alignParentBottom="true"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:text="Add some MLG shit"
-        />
+        <Button
+            android:id="@+id/b_addmontage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:text="Add some MLG shit" />
 
-    <Button
-        android:id="@+id/b_savemontage"
-        android:layout_alignParentBottom="true"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_toRightOf="@id/b_addmontage"
-        android:text="Save"
-        />
+        <Button
+            android:id="@+id/b_savemontage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="16dp"
+            android:layout_toRightOf="@id/b_addmontage"
+            android:text="Save" />
     </RelativeLayout>
+
     <HorizontalScrollView
         android:id="@+id/horizontal"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_alignParentBottom="true"
-        android:visibility="invisible"
-        >
-
-    <LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal" >
-
-    <Button
-        android:id="@+id/b_annuler"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="X"
-            />
-
-        <Button
-            android:id="@+id/b_doge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Doge"
-            />
-
-        <Button
-        android:id="@+id/b_shrek"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Shrek"
-            />
+        android:layout_alignParentBottom="true"
+        android:background="@color/notthatblack"
+        android:visibility="invisible">
 
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Doge"
-        />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Doge"
-        />
-
-        <Button
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Doge"
-            />
+            android:orientation="horizontal">
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Doge"
-            />
+            <Button
+                android:id="@+id/b_annuler"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="X" />
 
-</LinearLayout>
+            <Button
+                android:id="@+id/b_doge"
+                android:scaleType="fitCenter"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/doge"
+                 />
+
+            <Button
+                android:id="@+id/b_shrek"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/shrek"
+                />
+
+
+            <Button
+                android:id="@+id/b_snoop"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/snoop"
+                />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Doge" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Doge" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Doge" />
+
+        </LinearLayout>
 
     </HorizontalScrollView>
+
 </RelativeLayout>
