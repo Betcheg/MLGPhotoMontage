@@ -35,9 +35,13 @@ public class LetTheMLGBegin extends ActionBarActivity {
     int idTableau;
     int dernierIdImage = 0;
 
+    long lastclic = 0;
+    int lastId = 0;
+
     String imageString;
     Button addMLG;
     Button annuler;
+    Button save;
     Button doge;
     Button shrek;
     Button snoop;
@@ -59,8 +63,12 @@ public class LetTheMLGBegin extends ActionBarActivity {
         Intent intent = getIntent();
         imageString = intent.getStringExtra("image");
 
+        // Bouton IHM
         addMLG = (Button) findViewById(R.id.b_addmontage);
         annuler = (Button) findViewById(R.id.b_annuler);
+        save = (Button) findViewById(R.id.b_savemontage);
+
+        // Bouton MLG
         doge = (Button) findViewById(R.id.b_doge);
         shrek = (Button) findViewById(R.id.b_shrek);
         snoop = (Button) findViewById(R.id.b_snoop);
@@ -72,6 +80,26 @@ public class LetTheMLGBegin extends ActionBarActivity {
 
         ImageView imgView = (ImageView) findViewById(R.id.imgView);
         imgView.setImageBitmap(BitmapFactory.decodeFile(imageString));
+
+
+        imgView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                taille.setVisibility(View.INVISIBLE);
+                rotation.setVisibility(View.INVISIBLE);
+            }
+
+
+        });
+
+        save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "A faire ... zZz", Toast.LENGTH_SHORT).show();
+            }
+
+
+        });
 
 
         taille.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -174,6 +202,8 @@ public class LetTheMLGBegin extends ActionBarActivity {
         else if( id == R.drawable.shrek) idTableau = 1;
         else if( id == R.drawable.snoop) idTableau = 2;
 
+
+
         menu.setVisibility(View.INVISIBLE);
         horizontal.setVisibility(View.VISIBLE);
 
@@ -206,6 +236,7 @@ public class LetTheMLGBegin extends ActionBarActivity {
                     iv.setY(currentY - iv.getHeight() / 2);
                     rotation.bringToFront();
                     taille.bringToFront();
+                    lastclic = 0;
 
                 } else if (arg1.getAction() == MotionEvent.ACTION_DOWN) {
                     dernierIdImage = iv.getId();
@@ -215,9 +246,16 @@ public class LetTheMLGBegin extends ActionBarActivity {
                     horizontal.setVisibility(View.VISIBLE);
                     iv.bringToFront();
 
-                } else if (arg1.getAction() == MotionEvent.AXIS_TOUCH_MAJOR) {
-                    iv.setVisibility(View.GONE);
+                    if(lastId == iv.getId() && System.currentTimeMillis() - lastclic < 500){
+                        iv.setVisibility(View.GONE);
+                    }
+
+                    lastclic = System.currentTimeMillis();
+
                 }
+
+                lastId = iv.getId();
+
                 return true;
             }
         });
