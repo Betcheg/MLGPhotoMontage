@@ -60,9 +60,9 @@ public class LetTheMLGBegin extends ActionBarActivity {
         getSupportActionBar().hide();
 
         this.setContentView(R.layout.editor);
-        slide = new SimpleSideDrawer( this );
+        slide = new SimpleSideDrawer(this);
         slide.setLeftBehindContentView(R.layout.dankmemelist);
-        
+
         Intent intent = getIntent();
         imageString = intent.getStringExtra("image");
 
@@ -79,7 +79,7 @@ public class LetTheMLGBegin extends ActionBarActivity {
 
         taille = (SeekBar) findViewById(R.id.taille);
         rotation = (SeekBar) findViewById(R.id.rotation);
-        menu = (RelativeLayout) findViewById(R.id.menu);
+
 
         ImageView imgView = (ImageView) findViewById(R.id.imgView);
         imgView.setImageBitmap(BitmapFactory.decodeFile(imageString));
@@ -90,6 +90,9 @@ public class LetTheMLGBegin extends ActionBarActivity {
             public void onClick(View v) {
                 taille.setVisibility(View.INVISIBLE);
                 rotation.setVisibility(View.INVISIBLE);
+                if (!slide.isClosed()) {
+                    slide.close();
+                }
             }
 
 
@@ -112,8 +115,6 @@ public class LetTheMLGBegin extends ActionBarActivity {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progresValue, boolean fromUser) {
                 tmp = (ImageView) findViewById(dernierIdImage);
-                //LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams((lDoge*progresValue)+30,(hDoge*progresValue)+30);
-                //tmp.setLayoutParams(layoutParams);
                 tmp.requestLayout();
                 tmp.getLayoutParams().height = ((2 * tableauHauteur[idTableau] * progresValue) / 100) + 30;
                 tmp.getLayoutParams().width = ((2 * tableauLargeur[idTableau] * progresValue) / 100) + 30;
@@ -156,7 +157,7 @@ public class LetTheMLGBegin extends ActionBarActivity {
         addMLG.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                menu.setVisibility(View.INVISIBLE);
+                cacherMenu();
                 slide.toggleDrawer();
             }
 
@@ -166,7 +167,7 @@ public class LetTheMLGBegin extends ActionBarActivity {
         annuler.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                menu.setVisibility(View.VISIBLE);
+                afficherMenu();
                 taille.setVisibility(View.INVISIBLE);
                 rotation.setVisibility(View.INVISIBLE);
                 slide.toggleDrawer();
@@ -199,15 +200,25 @@ public class LetTheMLGBegin extends ActionBarActivity {
 
     }
 
+    void cacherMenu() {
+        addMLG.setVisibility(View.INVISIBLE);
+        save.setVisibility(View.INVISIBLE);
+    }
+
+    void afficherMenu() {
+        addMLG.setVisibility(View.VISIBLE);
+        save.setVisibility(View.VISIBLE);
+        addMLG.bringToFront();
+        save.bringToFront();
+    }
+
     void imageTouchee(int id) {
 
-        if( id == R.drawable.doge) idTableau = 0;
-        else if( id == R.drawable.shrek) idTableau = 1;
-        else if( id == R.drawable.snoop) idTableau = 2;
+        if (id == R.drawable.doge) idTableau = 0;
+        else if (id == R.drawable.shrek) idTableau = 1;
+        else if (id == R.drawable.snoop) idTableau = 2;
 
-
-
-        menu.setVisibility(View.INVISIBLE);
+        slide.toggleDrawer();
 
         final ImageView iv = new ImageView(getApplicationContext());
         iv.setImageResource(id);
@@ -224,6 +235,7 @@ public class LetTheMLGBegin extends ActionBarActivity {
         lp.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
         rl.addView(iv, lp);
 
+        afficherMenu();
 
         iv.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -244,15 +256,18 @@ public class LetTheMLGBegin extends ActionBarActivity {
                     dernierIdImage = iv.getId();
                     taille.setVisibility(View.VISIBLE);
                     rotation.setVisibility(View.VISIBLE);
-                    menu.setVisibility(View.INVISIBLE);
+                    cacherMenu();
                     iv.bringToFront();
 
-                    if(lastId == iv.getId() && System.currentTimeMillis() - lastclic < 500){
+                    if (lastId == iv.getId() && System.currentTimeMillis() - lastclic < 500) {
                         iv.setVisibility(View.GONE);
                     }
 
                     lastclic = System.currentTimeMillis();
 
+
+                } else if (arg1.getAction() == MotionEvent.ACTION_UP) {
+                    afficherMenu();
                 }
 
                 lastId = iv.getId();

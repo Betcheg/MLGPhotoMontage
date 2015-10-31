@@ -3,7 +3,7 @@
     android:id="@+id/rl"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/eucalyptus"
+    android:background="@color/black"
     android:orientation="vertical">
 
 
@@ -11,8 +11,8 @@
         android:id="@+id/imgView"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_above="@+id/menu"
         android:layout_weight="1"
+        android:layout_above="@+id/b_invisible"
         android:scaleType="fitXY"></ImageView>
 
     <SeekBar
@@ -34,30 +34,30 @@
         android:rotation="270"
         android:visibility="invisible" />
 
-    <RelativeLayout
-        android:id="@+id/menu"
+
+    <Button
+        android:id="@+id/b_addmontage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true">
+        android:layout_alignParentLeft="true"
+        android:text="Add some MLG shit" />
 
-        <Button
-            android:id="@+id/b_addmontage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:text="Add some MLG shit" />
+    <Button
+        android:id="@+id/b_invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:visibility="invisible"/>
 
-        <Button
-            android:id="@+id/b_savemontage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginLeft="16dp"
-            android:layout_toRightOf="@id/b_addmontage"
-            android:text="Save" />
 
-    </RelativeLayout>
+    <Button
+        android:id="@+id/b_savemontage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="Save" />
 
 
 </RelativeLayout>
