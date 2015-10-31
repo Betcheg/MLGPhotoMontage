@@ -21,6 +21,7 @@ import android.widget.SeekBar;
 import android.widget.Toast;
 
 import com.koushikdutta.ion.Ion;
+import com.navdrawer.SimpleSideDrawer;
 
 /**
  * Created by bastien on 28/10/15.
@@ -47,7 +48,7 @@ public class LetTheMLGBegin extends ActionBarActivity {
     Button snoop;
     ImageView tmp;
     RelativeLayout menu;
-
+    SimpleSideDrawer slide;
     HorizontalScrollView horizontal;
     SeekBar taille;
     SeekBar rotation;
@@ -59,7 +60,9 @@ public class LetTheMLGBegin extends ActionBarActivity {
         getSupportActionBar().hide();
 
         this.setContentView(R.layout.editor);
-
+        slide = new SimpleSideDrawer( this );
+        slide.setLeftBehindContentView(R.layout.dankmemelist);
+        
         Intent intent = getIntent();
         imageString = intent.getStringExtra("image");
 
@@ -73,10 +76,10 @@ public class LetTheMLGBegin extends ActionBarActivity {
         shrek = (Button) findViewById(R.id.b_shrek);
         snoop = (Button) findViewById(R.id.b_snoop);
 
+
         taille = (SeekBar) findViewById(R.id.taille);
         rotation = (SeekBar) findViewById(R.id.rotation);
         menu = (RelativeLayout) findViewById(R.id.menu);
-        horizontal = (HorizontalScrollView) findViewById(R.id.horizontal);
 
         ImageView imgView = (ImageView) findViewById(R.id.imgView);
         imgView.setImageBitmap(BitmapFactory.decodeFile(imageString));
@@ -154,7 +157,7 @@ public class LetTheMLGBegin extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 menu.setVisibility(View.INVISIBLE);
-                horizontal.setVisibility(View.VISIBLE);
+                slide.toggleDrawer();
             }
 
 
@@ -166,7 +169,7 @@ public class LetTheMLGBegin extends ActionBarActivity {
                 menu.setVisibility(View.VISIBLE);
                 taille.setVisibility(View.INVISIBLE);
                 rotation.setVisibility(View.INVISIBLE);
-                horizontal.setVisibility(View.INVISIBLE);
+                slide.toggleDrawer();
             }
 
         });
@@ -205,7 +208,6 @@ public class LetTheMLGBegin extends ActionBarActivity {
 
 
         menu.setVisibility(View.INVISIBLE);
-        horizontal.setVisibility(View.VISIBLE);
 
         final ImageView iv = new ImageView(getApplicationContext());
         iv.setImageResource(id);
@@ -243,7 +245,6 @@ public class LetTheMLGBegin extends ActionBarActivity {
                     taille.setVisibility(View.VISIBLE);
                     rotation.setVisibility(View.VISIBLE);
                     menu.setVisibility(View.INVISIBLE);
-                    horizontal.setVisibility(View.VISIBLE);
                     iv.bringToFront();
 
                     if(lastId == iv.getId() && System.currentTimeMillis() - lastclic < 500){

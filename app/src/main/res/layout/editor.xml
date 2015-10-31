@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/rl"
-    android:background="@color/eucalyptus"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/eucalyptus"
     android:orientation="vertical">
 
 
@@ -12,7 +11,7 @@
         android:id="@+id/imgView"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_above="@+id/horizontal"
+        android:layout_above="@+id/menu"
         android:layout_weight="1"
         android:scaleType="fitXY"></ImageView>
 
@@ -38,7 +37,7 @@
     <RelativeLayout
         android:id="@+id/menu"
         android:layout_width="wrap_content"
-        android:layout_height="fill_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true">
 
@@ -57,73 +56,8 @@
             android:layout_marginLeft="16dp"
             android:layout_toRightOf="@id/b_addmontage"
             android:text="Save" />
+
     </RelativeLayout>
 
-    <HorizontalScrollView
-        android:id="@+id/horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="@color/notthatblack"
-        android:visibility="invisible">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/b_annuler"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Back" />
-
-            <Button
-                android:id="@+id/b_doge"
-                android:scaleType="fitCenter"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:background="@drawable/doge"
-                 />
-
-            <Button
-                android:id="@+id/b_shrek"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:background="@drawable/shrek"
-                />
-
-
-            <Button
-                android:id="@+id/b_snoop"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:background="@drawable/snoop"
-                />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Doge" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Doge" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Doge" />
-
-        </LinearLayout>
-
-    </HorizontalScrollView>
 
 </RelativeLayout>
