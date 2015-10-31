@@ -42,6 +42,7 @@ public class LetTheMLGBegin extends ActionBarActivity {
     long lastclic = 0;
     int lastId = 0;
 
+    int nombreCourantImage = 0;
     String imageString;
     Button addMLG;
     Button save;
@@ -84,7 +85,6 @@ public class LetTheMLGBegin extends ActionBarActivity {
 
         ImageView imgView = (ImageView) findViewById(R.id.imgView);
         imgView.setImageBitmap(BitmapFactory.decodeFile(imageString));
-
 
 
         imgView.setOnClickListener(new View.OnClickListener() {
@@ -197,18 +197,21 @@ public class LetTheMLGBegin extends ActionBarActivity {
     }
 
     @Override
-    public void onBackPressed(){
-        new AlertDialog.Builder(LetTheMLGBegin.this)
-                .setTitle("WARNING")
-                .setMessage("R U SURE M8 ?THIS CHEF-D-OEUVRE WILL BE DESTROYED")
-                .setNegativeButton(android.R.string.cancel, null) // dismisses by default
-                .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
-                    @Override public void onClick(DialogInterface dialog, int which) {
-                        finish();
-                    }
-                })
-                .create()
-                .show();
+    public void onBackPressed() {
+        if (nombreCourantImage != 0) {
+            new AlertDialog.Builder(LetTheMLGBegin.this)
+                    .setTitle("WARNING")
+                    .setMessage("R U SURE M8 ?THIS CHEF-D-OEUVRE WILL BE DESTROYED")
+                    .setNegativeButton(android.R.string.cancel, null) // dismisses by default
+                    .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            finish();
+                        }
+                    })
+                    .create()
+                    .show();
+        } else finish();
     }
 
     void cacherMenu() {
@@ -225,6 +228,7 @@ public class LetTheMLGBegin extends ActionBarActivity {
 
     void imageTouchee(int id) {
 
+        nombreCourantImage++;
         if (id == R.drawable.doge) idTableau = 0;
         else if (id == R.drawable.shrek) idTableau = 1;
         else if (id == R.drawable.snoop) idTableau = 2;
@@ -272,6 +276,7 @@ public class LetTheMLGBegin extends ActionBarActivity {
 
                     if (lastId == iv.getId() && System.currentTimeMillis() - lastclic < 500) {
                         iv.setVisibility(View.GONE);
+                        nombreCourantImage--;
                     }
 
                     lastclic = System.currentTimeMillis();
