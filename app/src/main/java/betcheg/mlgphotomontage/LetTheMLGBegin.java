@@ -1,10 +1,13 @@
 package betcheg.mlgphotomontage;
 
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutCompat;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -41,15 +44,12 @@ public class LetTheMLGBegin extends ActionBarActivity {
 
     String imageString;
     Button addMLG;
-    Button annuler;
     Button save;
     Button doge;
     Button shrek;
     Button snoop;
     ImageView tmp;
-    RelativeLayout menu;
     SimpleSideDrawer slide;
-    HorizontalScrollView horizontal;
     SeekBar taille;
     SeekBar rotation;
 
@@ -68,8 +68,9 @@ public class LetTheMLGBegin extends ActionBarActivity {
 
         // Bouton IHM
         addMLG = (Button) findViewById(R.id.b_addmontage);
-        annuler = (Button) findViewById(R.id.b_annuler);
+        addMLG.setTextColor(Color.parseColor("white"));
         save = (Button) findViewById(R.id.b_savemontage);
+        save.setTextColor(Color.parseColor("white"));
 
         // Bouton MLG
         doge = (Button) findViewById(R.id.b_doge);
@@ -85,6 +86,7 @@ public class LetTheMLGBegin extends ActionBarActivity {
         imgView.setImageBitmap(BitmapFactory.decodeFile(imageString));
 
 
+
         imgView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -93,10 +95,13 @@ public class LetTheMLGBegin extends ActionBarActivity {
                 if (!slide.isClosed()) {
                     slide.close();
                 }
+                afficherMenu();
+                save.setVisibility(View.VISIBLE);
             }
 
 
         });
+
 
         save.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -110,7 +115,6 @@ public class LetTheMLGBegin extends ActionBarActivity {
 
         taille.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
 
-            int progress = 0;
 
             @Override
             public void onProgressChanged(SeekBar seekBar, int progresValue, boolean fromUser) {
@@ -157,23 +161,15 @@ public class LetTheMLGBegin extends ActionBarActivity {
         addMLG.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                cacherMenu();
-                slide.toggleDrawer();
-            }
-
-
-        });
-
-        annuler.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                afficherMenu();
                 taille.setVisibility(View.INVISIBLE);
                 rotation.setVisibility(View.INVISIBLE);
+                //cacherMenu();
                 slide.toggleDrawer();
             }
 
+
         });
+
 
         shrek.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -198,6 +194,21 @@ public class LetTheMLGBegin extends ActionBarActivity {
             }
         });
 
+    }
+
+    @Override
+    public void onBackPressed(){
+        new AlertDialog.Builder(LetTheMLGBegin.this)
+                .setTitle("WARNING")
+                .setMessage("R U SURE M8 ?THIS CHEF-D-OEUVRE WILL BE DESTROYED")
+                .setNegativeButton(android.R.string.cancel, null) // dismisses by default
+                .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                    @Override public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                    }
+                })
+                .create()
+                .show();
     }
 
     void cacherMenu() {
