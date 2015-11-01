@@ -32,9 +32,9 @@ import com.navdrawer.SimpleSideDrawer;
 public class LetTheMLGBegin extends ActionBarActivity {
 
     // Original image size, has to be hardcoded :'(
-    String[] tableauNom = {"Doge", "Shrek", "Snoop", "Joint", "8bitGlasses", "Fedora", "Sniper", "Hitmarker", "Illuminati", "Vuvuzela", "Frog"};
-    int[] tableauLargeur = {225, 190, 290};
-    int[] tableauHauteur = {255, 169, 292};
+    String[] tableauNom = {"Doge", "Shrek", "Snoop", "Frog", "Joint", "8bitGlasses", "Fedora", "Sniper", "Hitmarker", "Illuminati", "Vuvuzela", "Frog"};
+    int[] tableauLargeur = {225, 190, 290,200};
+    int[] tableauHauteur = {255, 169, 292,200};
 
     int idTableau;
     int dernierIdImage = 0;
@@ -49,6 +49,7 @@ public class LetTheMLGBegin extends ActionBarActivity {
     Button doge;
     Button shrek;
     Button snoop;
+    Button frog;
     ImageView tmp;
     SimpleSideDrawer slide;
     SeekBar taille;
@@ -77,7 +78,7 @@ public class LetTheMLGBegin extends ActionBarActivity {
         doge = (Button) findViewById(R.id.b_doge);
         shrek = (Button) findViewById(R.id.b_shrek);
         snoop = (Button) findViewById(R.id.b_snoop);
-
+        frog = (Button) findViewById(R.id.b_frog);
 
         taille = (SeekBar) findViewById(R.id.taille);
         rotation = (SeekBar) findViewById(R.id.rotation);
@@ -194,6 +195,13 @@ public class LetTheMLGBegin extends ActionBarActivity {
             }
         });
 
+        frog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                imageTouchee(R.drawable.frog);
+            }
+        });
+
     }
 
     @Override
@@ -232,6 +240,7 @@ public class LetTheMLGBegin extends ActionBarActivity {
         if (id == R.drawable.doge) idTableau = 0;
         else if (id == R.drawable.shrek) idTableau = 1;
         else if (id == R.drawable.snoop) idTableau = 2;
+        else if (id == R.drawable.frog) idTableau = 3;
 
         slide.toggleDrawer();
 
