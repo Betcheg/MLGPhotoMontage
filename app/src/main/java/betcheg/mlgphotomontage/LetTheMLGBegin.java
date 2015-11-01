@@ -33,8 +33,8 @@ public class LetTheMLGBegin extends ActionBarActivity {
 
     // Original image size, has to be hardcoded :'(
     String[] tableauNom = {"Doge", "Shrek", "Snoop", "Frog", "Joint", "8bitGlasses", "Fedora", "Sniper", "Hitmarker", "Illuminati", "Vuvuzela", "Frog"};
-    int[] tableauLargeur = {225, 190, 290,100};
-    int[] tableauHauteur = {255, 169, 292,100};
+    int[] tableauLargeur = {225, 190, 290,200};
+    int[] tableauHauteur = {255, 169, 292,200};
 
     int idTableau;
     int dernierIdImage = 0;
