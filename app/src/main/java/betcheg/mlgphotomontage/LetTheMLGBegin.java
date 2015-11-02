@@ -33,6 +33,7 @@ public class LetTheMLGBegin extends ActionBarActivity {
 
     // Original image size, has to be hardcoded :'(
     String[] tableauNom = {"Doge", "Shrek", "Snoop", "Frog", "Joint", "8bitGlasses", "Fedora", "Sniper", "Hitmarker", "Illuminati", "Vuvuzela", "Frog"};
+    int[] tableauId = { R.drawable.doge, R.drawable.shrek, R.drawable.snoop,R.drawable.frog};
     int[] tableauLargeur = {225, 190, 290,200};
     int[] tableauHauteur = {255, 169, 292,200};
 
