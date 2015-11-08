@@ -240,11 +240,11 @@ public class LetTheMLGBegin extends ActionBarActivity {
     void imageTouchee(int id) {
 
         nombreCourantImage++;
-       /* if (id == R.drawable.doge) idTableau = 0;
+        if (id == R.drawable.doge) idTableau = 0;
         else if (id == R.drawable.shrek) idTableau = 1;
         else if (id == R.drawable.snoop) idTableau = 2;
-        else if (id == R.drawable.frog) idTableau = 3; */
-        idTableau = Arrays.asList(tableauId).indexOf(id);
+        else if (id == R.drawable.frog) idTableau = 3;
+
 
         slide.toggleDrawer();
 
