@@ -26,6 +26,8 @@ import android.widget.Toast;
 import com.koushikdutta.ion.Ion;
 import com.navdrawer.SimpleSideDrawer;
 
+import java.util.Arrays;
+
 /**
  * Created by bastien on 28/10/15.
  */
@@ -238,10 +240,11 @@ public class LetTheMLGBegin extends ActionBarActivity {
     void imageTouchee(int id) {
 
         nombreCourantImage++;
-        if (id == R.drawable.doge) idTableau = 0;
+       /* if (id == R.drawable.doge) idTableau = 0;
         else if (id == R.drawable.shrek) idTableau = 1;
         else if (id == R.drawable.snoop) idTableau = 2;
-        else if (id == R.drawable.frog) idTableau = 3;
+        else if (id == R.drawable.frog) idTableau = 3; */
+        idTableau = Arrays.asList(tableauId).indexOf(id);
 
         slide.toggleDrawer();
 
