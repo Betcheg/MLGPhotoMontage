@@ -34,10 +34,10 @@ import java.util.Arrays;
 public class LetTheMLGBegin extends ActionBarActivity {
 
     // Original image size, has to be hardcoded :'(
-    String[] tableauNom = {"Doge", "Shrek", "Snoop", "Frog", "Joint", "8bitGlasses", "Fedora", "Sniper", "Hitmarker", "Illuminati", "Vuvuzela", "Frog"};
-    int[] tableauId = { R.drawable.doge, R.drawable.shrek, R.drawable.snoop,R.drawable.frog};
-    int[] tableauLargeur = {225, 190, 290,200};
-    int[] tableauHauteur = {255, 169, 292,200};
+    int[] tableauId = { R.drawable.doge, R.drawable.shrek, R.drawable.snoop,R.drawable.frog, R.drawable.eightbitglass,
+            R.drawable.dorito, R.drawable.explosion,R.drawable.hitmarker,R.drawable.hornintensifie, R.drawable.jointgif};
+    int[] tableauLargeur = {225, 190, 290, 200, 718, 294,718,124,718, 718};
+    int[] tableauHauteur = {255, 169, 292, 200, 400,199,404,104,404, 404};
 
     int idTableau;
     int dernierIdImage = 0;
@@ -53,6 +53,13 @@ public class LetTheMLGBegin extends ActionBarActivity {
     Button shrek;
     Button snoop;
     Button frog;
+    Button eightbitglass;
+    Button dorito;
+    Button explosion;
+    Button hitmarker;
+    Button hornintensifie;
+    Button jointgif;
+
     ImageView tmp;
     SimpleSideDrawer slide;
     SeekBar taille;
@@ -82,6 +89,12 @@ public class LetTheMLGBegin extends ActionBarActivity {
         shrek = (Button) findViewById(R.id.b_shrek);
         snoop = (Button) findViewById(R.id.b_snoop);
         frog = (Button) findViewById(R.id.b_frog);
+        eightbitglass = (Button) findViewById(R.id.b_eightbitglass);
+        dorito = (Button) findViewById(R.id.b_dorito);
+        explosion = (Button) findViewById(R.id.b_explosion);
+        hitmarker = (Button) findViewById(R.id.b_hitmarker);
+        hornintensifie = (Button) findViewById(R.id.b_hornintensifie);
+        jointgif = (Button) findViewById(R.id.b_jointgif);
 
         taille = (SeekBar) findViewById(R.id.taille);
         rotation = (SeekBar) findViewById(R.id.rotation);
@@ -205,6 +218,48 @@ public class LetTheMLGBegin extends ActionBarActivity {
             }
         });
 
+        eightbitglass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                imageTouchee(R.drawable.eightbitglass);
+            }
+        });
+
+        dorito.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                imageTouchee(R.drawable.dorito);
+            }
+        });
+
+        hitmarker.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                imageTouchee(R.drawable.hitmarker);
+            }
+        });
+
+        explosion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                imageTouchee(R.drawable.explosion);
+            }
+        });
+
+        hornintensifie.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                imageTouchee(R.drawable.hornintensifie);
+            }
+        });
+
+        jointgif.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                imageTouchee(R.drawable.jointgif);
+            }
+        });
+
     }
 
     @Override
@@ -240,11 +295,15 @@ public class LetTheMLGBegin extends ActionBarActivity {
     void imageTouchee(int id) {
 
         nombreCourantImage++;
-        if (id == R.drawable.doge) idTableau = 0;
+       /* if (id == R.drawable.doge) idTableau = 0;
         else if (id == R.drawable.shrek) idTableau = 1;
         else if (id == R.drawable.snoop) idTableau = 2;
-        else if (id == R.drawable.frog) idTableau = 3;
+        else if (id == R.drawable.frog) idTableau = 3; */
 
+        idTableau = 1;
+        for( int idCourant=0; idCourant < tableauId.length; idCourant++){
+            if(tableauId[idCourant] == id) idTableau = idCourant;
+        }
 
         slide.toggleDrawer();
 
