@@ -34,10 +34,16 @@ import java.util.Arrays;
 public class LetTheMLGBegin extends ActionBarActivity {
 
     // Original image size, has to be hardcoded :'(
-    int[] tableauId = { R.drawable.doge, R.drawable.shrek, R.drawable.snoop,R.drawable.frog, R.drawable.eightbitglass,
-            R.drawable.dorito, R.drawable.explosion,R.drawable.hitmarker,R.drawable.hornintensifie, R.drawable.jointgif};
-    int[] tableauLargeur = {225, 190, 290, 200, 718, 294,718,124,718, 718};
-    int[] tableauHauteur = {255, 169, 292, 200, 400,199,404,104,404, 404};
+    long[] tableauId = { R.drawable.doge, R.drawable.shrek, R.drawable.snoop,R.drawable.hitmarker, R.drawable.eightbit,
+            R.drawable.thuglife, R.drawable.yolo, R.drawable.joint,R.drawable.cana, R.drawable.illuminatitriangle,R.drawable.fedora,
+            R.drawable.thugcap, R.drawable.goldchain, R.drawable.patrick, R.drawable.getrekt, R.drawable.cash, R.drawable.notdoritochip,
+            R.drawable.notmdcan, R.drawable.trollface, R.drawable.vuvuzela, R.drawable.bong,R.drawable.ak,R.drawable.snipe,
+            R.drawable.dootdoottrumpet, R.drawable.skelet ,R.drawable.peperonni,R.drawable.lenny};
+
+    int[] tableauLargeur = {225, 190, 290, 124, 200, 290, 327,240, 128, 127, 250, 280, 205, 159, 299, 300, 167, 108, 225,
+            250, 115, 296, 290, 184, 207, 240, 383};
+    int[] tableauHauteur = {255, 169, 292, 104, 41, 73, 106, 83  ,128, 117, 172, 209, 230, 240, 189, 300, 190, 200, 209,
+            89, 280, 84, 87, 194, 279, 233, 140};
 
     int idTableau;
     int dernierIdImage = 0;
@@ -49,16 +55,35 @@ public class LetTheMLGBegin extends ActionBarActivity {
     String imageString;
     Button addMLG;
     Button save;
+
     Button doge;
     Button shrek;
     Button snoop;
-    Button frog;
-    Button eightbitglass;
-    Button dorito;
-    Button explosion;
     Button hitmarker;
-    Button hornintensifie;
-    Button jointgif;
+    Button cana;
+    Button eightbit;
+    Button thuglife;
+    Button thugcap;
+    Button goldchain;
+    Button patrick;
+    Button getrekt;
+    Button illuminatitriangle;
+    Button joint;
+    Button cash;
+    Button notmdcan;
+    Button notdoritochip;
+    Button trollface;
+    Button fedora;
+    Button yolo;
+    Button vuvuzela;
+    Button bong;
+    Button ak;
+    Button snipe;
+    Button dootdoottrumpet;
+    Button skelet;
+    Button peperonni;
+    Button lenny;
+
 
     ImageView tmp;
     SimpleSideDrawer slide;
@@ -88,13 +113,30 @@ public class LetTheMLGBegin extends ActionBarActivity {
         doge = (Button) findViewById(R.id.b_doge);
         shrek = (Button) findViewById(R.id.b_shrek);
         snoop = (Button) findViewById(R.id.b_snoop);
-        frog = (Button) findViewById(R.id.b_frog);
-        eightbitglass = (Button) findViewById(R.id.b_eightbitglass);
-        dorito = (Button) findViewById(R.id.b_dorito);
-        explosion = (Button) findViewById(R.id.b_explosion);
+        ak = (Button) findViewById(R.id.b_ak);
+        bong = (Button) findViewById(R.id.b_bong);
+        cana = (Button) findViewById(R.id.b_cana);
+        cash = (Button) findViewById(R.id.b_cash);
         hitmarker = (Button) findViewById(R.id.b_hitmarker);
-        hornintensifie = (Button) findViewById(R.id.b_hornintensifie);
-        jointgif = (Button) findViewById(R.id.b_jointgif);
+        skelet = (Button) findViewById(R.id.b_skelet);
+        eightbit = (Button) findViewById(R.id.b_eightbit);
+        fedora = (Button) findViewById(R.id.b_fedora);
+        getrekt = (Button) findViewById(R.id.b_getrekt);
+        goldchain = (Button) findViewById(R.id.b_goldchain);
+        illuminatitriangle = (Button) findViewById(R.id.b_illuminatitriangle);
+        joint = (Button) findViewById(R.id.b_joint);
+        lenny = (Button) findViewById(R.id.b_lenny);
+        notdoritochip = (Button) findViewById(R.id.b_notdoritochip);
+        notmdcan = (Button) findViewById(R.id.b_notmdcan);
+        dootdoottrumpet = (Button) findViewById(R.id.b_dootdoottrumpet);
+        patrick = (Button) findViewById(R.id.b_patrick);
+        peperonni = (Button) findViewById(R.id.b_peperonni);
+        snipe = (Button) findViewById(R.id.b_snipe);
+        thugcap = (Button) findViewById(R.id.b_thugcap);
+        thuglife = (Button) findViewById(R.id.b_thuglife);
+        trollface = (Button) findViewById(R.id.b_trollface);
+        vuvuzela = (Button) findViewById(R.id.b_vuvuzela);
+        yolo = (Button) findViewById(R.id.b_yolo);
 
         taille = (SeekBar) findViewById(R.id.taille);
         rotation = (SeekBar) findViewById(R.id.rotation);
@@ -211,24 +253,24 @@ public class LetTheMLGBegin extends ActionBarActivity {
             }
         });
 
-        frog.setOnClickListener(new View.OnClickListener() {
+        ak.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                imageTouchee(R.drawable.frog);
+                imageTouchee(R.drawable.ak);
             }
         });
 
-        eightbitglass.setOnClickListener(new View.OnClickListener() {
+        bong.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                imageTouchee(R.drawable.eightbitglass);
+                imageTouchee(R.drawable.bong);
             }
         });
 
-        dorito.setOnClickListener(new View.OnClickListener() {
+        cana.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                imageTouchee(R.drawable.dorito);
+                imageTouchee(R.drawable.cana);
             }
         });
 
@@ -239,26 +281,149 @@ public class LetTheMLGBegin extends ActionBarActivity {
             }
         });
 
-        explosion.setOnClickListener(new View.OnClickListener() {
+        cash.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                imageTouchee(R.drawable.explosion);
+                imageTouchee(R.drawable.cash);
             }
         });
 
-        hornintensifie.setOnClickListener(new View.OnClickListener() {
+        dootdoottrumpet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                imageTouchee(R.drawable.hornintensifie);
+                imageTouchee(R.drawable.dootdoottrumpet);
             }
         });
 
-        jointgif.setOnClickListener(new View.OnClickListener() {
+        eightbit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                imageTouchee(R.drawable.jointgif);
+                imageTouchee(R.drawable.eightbit);
             }
         });
+
+        fedora.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                imageTouchee(R.drawable.fedora);
+            }
+        });
+
+        getrekt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                imageTouchee(R.drawable.getrekt);
+            }
+        });
+
+        goldchain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                imageTouchee(R.drawable.goldchain);
+            }
+        });
+
+        lenny.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                imageTouchee(R.drawable.lenny);
+            }
+        });
+
+
+        illuminatitriangle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                imageTouchee(R.drawable.illuminatitriangle);
+            }
+        });
+
+        joint.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                imageTouchee(R.drawable.joint);
+            }
+        });
+
+        notdoritochip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                imageTouchee(R.drawable.notdoritochip);
+            }
+        });
+
+        notmdcan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                imageTouchee(R.drawable.notmdcan);
+            }
+        });
+
+        patrick.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                imageTouchee(R.drawable.patrick);
+            }
+        });
+
+        peperonni.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                imageTouchee(R.drawable.peperonni);
+            }
+        });
+
+        skelet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                imageTouchee(R.drawable.skelet);
+            }
+        });
+
+        snipe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                imageTouchee(R.drawable.snipe);
+            }
+        });
+
+        thugcap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                imageTouchee(R.drawable.thugcap);
+            }
+        });
+
+        thuglife.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                imageTouchee(R.drawable.thuglife);
+            }
+        });
+
+        vuvuzela.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                imageTouchee(R.drawable.vuvuzela);
+            }
+        });
+
+        yolo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                imageTouchee(R.drawable.yolo);
+            }
+        });
+
+        trollface.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                imageTouchee(R.drawable.trollface);
+            }
+        });
+
+
+
 
     }
 
@@ -301,9 +466,12 @@ public class LetTheMLGBegin extends ActionBarActivity {
         else if (id == R.drawable.frog) idTableau = 3; */
 
         idTableau = 1;
-        for( int idCourant=0; idCourant < tableauId.length; idCourant++){
-            if(tableauId[idCourant] == id) idTableau = idCourant;
-        }
+
+            for (int idCourant = 0; idCourant < tableauId.length; idCourant++) {
+                if (tableauId[idCourant] == id) idTableau = idCourant;
+            }
+
+        Log.i("Integer id courant: ", Integer.toString(idTableau));
 
         slide.toggleDrawer();
 
