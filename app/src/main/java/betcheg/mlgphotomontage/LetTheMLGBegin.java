@@ -480,7 +480,7 @@ public class LetTheMLGBegin extends ActionBarActivity {
         iv.setClickable(true);
         iv.setId(View.generateViewId());
 
-        Ion.with(iv).load("android.resource://betcheg.mlgphotomontage/" + id);
+        //Ion.with(iv).load("android.resource://betcheg.mlgphotomontage/" + id);
 
         RelativeLayout rl = (RelativeLayout) findViewById(R.id.rl);
         RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(
