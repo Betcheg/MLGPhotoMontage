@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title>eduspot :: connexion</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="eduspot / Portail captif UnivNautes">
+    <meta name="author" content="UNPIdF - Entr'ouvert www.entrouvert.com">
+
+
+    <!-- Le styles -->
+    <link href="/static/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+      body { padding-top: 60px; padding-bottom: 40px; }
+      .sidebar-nav { padding: 9px 0; }
+    </style>
+    <link href="/static/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="/static/html5shiv/js/html5shiv.js"></script>
+    <![endif]-->
+
+    
+    <!-- LeafLet http://leafletjs.com -->
+    <link rel="stylesheet" href="/static/leaflet/leaflet.css"/>
+
+    <!-- https://github.com/danzel/Leaflet.markercluster -->
+    <link rel="stylesheet" href="/static/leaflet.markercluster/MarkerCluster.css" />
+    <link rel="stylesheet" href="/static/leaflet.markercluster/MarkerCluster.Default.css" />
+
+
+    <!-- Fav and touch icons -->
+    <link rel="shortcut icon" href="/static/univnautes/img/favicon.ico" />
+
+    <!-- local CSS -->
+    <link rel="stylesheet" href="/static/univnautes/css/univnautes.css" />
+    <!--[if lte IE 8]><link rel="stylesheet" href="/static/univnautes/css/univnautes.ie.css" /><![endif]-->
+
+  </head>
+
+  <body >
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="/"><i class="icon-eduspot"></i> Accès eduspot</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li><a href="/conditions">Conditions d'utilisation</a></li>
+	      <li><a href="/mail">Contact <i class="icon-envelope icon-white"></i></a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+
+      <div class="row-fluid">
+        
+<font color="red">Portail berlioz <br>
+EDUSPOT</font>
+
+      </div>
+
+      <div class="row-fluid">
+        
+      </div>
+
+      
+      <div class="row-fluid">
+        <div class="span5">
+
+	  
+
+	  
+          <div class="well sidebar-nav" id="defaultidp">
+            <ul class="nav nav-list">
+	      <li data-entityid="default_idp.entity_id">
+		<a id="defaultidp" class="defaultidp idplink" data-entityid="https://idp-etu.crous-grenoble.fr/idp/shibboleth"
+			href="sso?entity_id=https%3A%2F%2Fidp-etu.crous-grenoble.fr%2Fidp%2Fshibboleth">CROUS Grenoble - étudiants</a>
+	      </li>
+            </ul>
+          </div>
+	  
+
+          <p>
+            <input class="span12" id="search" type="text" placeholder="Chercher dans la liste…">
+          </p>
+
+          <div class="well sidebar-nav">
+		  <ul id="idps" class="nav nav-list">
+<li><a href="/sso?entity_id=https%3A%2F%2Fsharav.abes.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="43.6" data-lon="3.8833" data-entityid="https://sharav.abes.fr/idp/shibboleth" data-filtertext="ABES - French Bibliographic Agency for Higher Education">ABES - French Bibliographic Agency for Higher Education</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Ffederation.agrocampus-ouest.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.112" data-lon="-1.6743" data-entityid="https://federation.agrocampus-ouest.fr/idp/shibboleth" data-filtertext="AGROCAMPUS OUEST">AGROCAMPUS OUEST</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.amue.fr%2Fidp%2Fsaml2%2Fmetadata" class="idplink" data-lat="48.8448" data-lon="2.3471" data-entityid="https://idp.amue.fr/idp/saml2/metadata" data-filtertext="AMUE - Agence de Mutualisation des Universités et Etablissements">AMUE - Agence de Mutualisation des Universités et Etablissements</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fid.auf.org%2Fidp%2Fsaml2%2Fmetadata" class="idplink" data-lat="45.45" data-lon="-73.5667" data-entityid="https://id.auf.org/idp/saml2/metadata" data-filtertext="Agence universitaire de la Francophonie (AUF)">Agence universitaire de la Francophonie (AUF)</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp1.agroparistech.fr%2Fshibboleth" class="idplink" data-lat="48.86" data-lon="2.35" data-entityid="https://idp1.agroparistech.fr/shibboleth" data-filtertext="AgroParisTech Institut des sciences et des industries du vivant et de l'environnement">AgroParisTech Institut des sciences et des industries du vivant et de l'environnement</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Faishib.agropolis.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="43.6" data-lon="3.8833" data-entityid="https://aishib.agropolis.fr/idp/shibboleth" data-filtertext="Agropolis International">Agropolis International</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fauth.agrosupdijon.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="47.3167" data-lon="5.0167" data-entityid="https://auth.agrosupdijon.fr/idp/shibboleth" data-filtertext="Agrosup DIJON INSSAAE">Agrosup DIJON INSSAAE</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.cereq.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="43.2911" data-lon="5.3824" data-entityid="https://idp.cereq.fr/idp/shibboleth" data-filtertext="CEREQ - Centre d'études et de recherches sur les qualifications">CEREQ - Centre d'études et de recherches sur les qualifications</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fvmfetid.iamm.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="43.6" data-lon="3.8833" data-entityid="https://vmfetid.iamm.fr/idp/shibboleth" data-filtertext="CIHEAM / IAMM">CIHEAM / IAMM</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.cirad.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.86" data-lon="2.35" data-entityid="https://idp.cirad.fr/idp/shibboleth" data-filtertext="CIRAD">CIRAD</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fshibboleth.cndp.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="46.8322" data-lon="0.458" data-entityid="https://shibboleth.cndp.fr/idp/shibboleth" data-filtertext="CNDP - Centre National de Documentation Pédagogique">CNDP - Centre National de Documentation Pédagogique</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.cnous.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.8667" data-lon="2.3333" data-entityid="https://idp.cnous.fr/idp/shibboleth" data-filtertext="CNOUS">CNOUS</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidpcnous.cnous.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.8667" data-lon="2.3333" data-entityid="https://idpcnous.cnous.fr/idp/shibboleth" data-filtertext="CNOUS Personnels">CNOUS Personnels</a></li>
+<li><a href="/sso?entity_id=urn%3Amace%3Acnrs.fr%3Ajanus.dsi.cnrs.fr" class="idplink" data-lat="48.8667" data-lon="2.3333" data-entityid="urn:mace:cnrs.fr:janus.dsi.cnrs.fr" data-filtertext="CNRS">CNRS</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fjanus.cnrs.fr%2Fidp" class="idplink" data-lat="48.86" data-lon="2.35" data-entityid="https://janus.cnrs.fr/idp" data-filtertext="CNRS (new)">CNRS (new)</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.cpe.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="45.7655" data-lon="4.8755" data-entityid="https://idp.cpe.fr/idp/shibboleth" data-filtertext="CPE Lyon">CPE Lyon</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fsrv-cr-idp.crdp-aquitaine.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="44.8404" data-lon="-0.5805" data-entityid="https://srv-cr-idp.crdp-aquitaine.fr/idp/shibboleth" data-filtertext="CRDP d'Aquitaine">CRDP d'Aquitaine</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.crihan.fr%2Fsaml2%2Fidp%2Fmetadata.php" class="idplink" data-lat="48.86" data-lon="2.35" data-entityid="https://idp.crihan.fr/saml2/idp/metadata.php" data-filtertext="CRIHAN">CRIHAN</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp1.crous-aix-marseille.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.8357" data-lon="2.2473" data-entityid="https://idp1.crous-aix-marseille.fr/idp/shibboleth" data-filtertext="CROUS Aix Marseille">CROUS Aix Marseille</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fshibb.crous-amiens.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="49.9" data-lon="2.3" data-entityid="https://shibb.crous-amiens.fr/idp/shibboleth" data-filtertext="CROUS Amiens Picardie">CROUS Amiens Picardie</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.crous-antillesguyane.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="16.25" data-lon="-61.5833" data-entityid="https://idp.crous-antillesguyane.fr/idp/shibboleth" data-filtertext="CROUS Antilles-Guyane">CROUS Antilles-Guyane</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.crous-besancon.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="47.5081" data-lon="6.8275" data-entityid="https://idp.crous-besancon.fr/idp/shibboleth" data-filtertext="CROUS Besançon">CROUS Besançon</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.crous-clermont.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="45.7833" data-lon="3.0833" data-entityid="https://idp.crous-clermont.fr/idp/shibboleth" data-filtertext="CROUS Clermont-Ferrand">CROUS Clermont-Ferrand</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.crous-creteil.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.86" data-lon="2.35" data-entityid="https://idp.crous-creteil.fr/idp/shibboleth" data-filtertext="CROUS Créteil">CROUS Créteil</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.crous-dijon.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="47.3167" data-lon="5.0167" data-entityid="https://idp.crous-dijon.fr/idp/shibboleth" data-filtertext="CROUS Dijon - Personnels">CROUS Dijon - Personnels</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.crous-grenoble.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="45.1653" data-lon="5.7634" data-entityid="https://idp.crous-grenoble.fr/idp/shibboleth" data-filtertext="CROUS Grenoble - Personnels">CROUS Grenoble - Personnels</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp-etu.crous-grenoble.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="45.1653" data-lon="5.7634" data-entityid="https://idp-etu.crous-grenoble.fr/idp/shibboleth" data-filtertext="CROUS Grenoble - étudiants">CROUS Grenoble - étudiants</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Ffederation.crous-lille.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="50.6714" data-lon="3.0688" data-entityid="https://federation.crous-lille.fr/idp/shibboleth" data-filtertext="CROUS Lille">CROUS Lille</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.crous-montpellier.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="43.6109" data-lon="3.8772" data-entityid="https://idp.crous-montpellier.fr/idp/shibboleth" data-filtertext="CROUS Montpellier">CROUS Montpellier</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.crous-nancy-metz.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="49.1155" data-lon="6.1759" data-entityid="https://idp.crous-nancy-metz.fr/idp/shibboleth" data-filtertext="CROUS Nancy-Metz Lorraine">CROUS Nancy-Metz Lorraine</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.crous-orleans-tours.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="47.3571" data-lon="0.8057" data-entityid="https://idp.crous-orleans-tours.fr/idp/shibboleth" data-filtertext="CROUS Orléans-Tours - Personnels">CROUS Orléans-Tours - Personnels</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.crous-paris.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="49.1534" data-lon="2.2722" data-entityid="https://idp.crous-paris.fr/idp/shibboleth" data-filtertext="CROUS Paris">CROUS Paris</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fshibboleth.crous-poitiers.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="46.5833" data-lon="0.3333" data-entityid="https://shibboleth.crous-poitiers.fr/idp/shibboleth" data-filtertext="CROUS Poitiers - Etudiants">CROUS Poitiers - Etudiants</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fshibboleth2.crous-poitiers.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="46.5833" data-lon="0.3333" data-entityid="https://shibboleth2.crous-poitiers.fr/idp/shibboleth" data-filtertext="CROUS Poitiers - Personnels">CROUS Poitiers - Personnels</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.crous-reims.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.86" data-lon="2.35" data-entityid="https://idp.crous-reims.fr/idp/shibboleth" data-filtertext="CROUS Reims">CROUS Reims</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.crous-rennes.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.112" data-lon="-1.6743" data-entityid="https://idp.crous-rennes.fr/idp/shibboleth" data-filtertext="CROUS Rennes - Personnels">CROUS Rennes - Personnels</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fsi.crous-rouen.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="49.4938" data-lon="0.1077" data-entityid="https://si.crous-rouen.fr/idp/shibboleth" data-filtertext="CROUS Rouen - Personnels">CROUS Rouen - Personnels</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.crous-strasbourg.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.6004" data-lon="7.7874" data-entityid="https://idp.crous-strasbourg.fr/idp/shibboleth" data-filtertext="CROUS Strasbourg">CROUS Strasbourg</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp1.crous-toulouse.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="43.6043" data-lon="1.4437" data-entityid="https://idp1.crous-toulouse.fr/idp/shibboleth" data-filtertext="CROUS Toulouse - Etudiants">CROUS Toulouse - Etudiants</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp2.crous-toulouse.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="43.5995" data-lon="1.4332" data-entityid="https://idp2.crous-toulouse.fr/idp/shibboleth" data-filtertext="CROUS Toulouse - Personnels">CROUS Toulouse - Personnels</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fauth.crous-versailles.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.86" data-lon="2.35" data-entityid="https://auth.crous-versailles.fr/idp/shibboleth" data-filtertext="CROUS Versailles - Personnels">CROUS Versailles - Personnels</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.crous-limoges.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="45.8315" data-lon="1.2578" data-entityid="https://idp.crous-limoges.fr/idp/shibboleth" data-filtertext="CROUS de Limoges">CROUS de Limoges</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fcas.crous-lyon.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="45.7485" data-lon="4.8467" data-entityid="https://cas.crous-lyon.fr/idp/shibboleth" data-filtertext="CROUS de Lyon-Personnel">CROUS de Lyon-Personnel</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.crous-nice.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="43.7136" data-lon="7.2595" data-entityid="https://idp.crous-nice.fr/idp/shibboleth" data-filtertext="CROUS de Nice - Employee">CROUS de Nice - Employee</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.crous-poitiers.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="46.5833" data-lon="0.3333" data-entityid="https://idp.crous-poitiers.fr/idp/shibboleth" data-filtertext="CROUS de Poitiers">CROUS de Poitiers</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.crous-nantes.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="47.2165" data-lon="-1.5524" data-entityid="https://idp.crous-nantes.fr/idp/shibboleth" data-filtertext="CROUS of Nantes">CROUS of Nantes</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Ffed.id.univ-bordeaux.fr%2Fidp_ubx%2Fshibboleth" class="idplink" data-lat="44.8404" data-lon="-0.5805" data-entityid="https://fed.id.univ-bordeaux.fr/idp_ubx/shibboleth" data-filtertext="CUEA - Communauté d'universités et d'établissements d'Aquitaine">CUEA - Communauté d'universités et d'établissements d'Aquitaine</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidentities.univ-jfc.fr%2Fidp%2Fprod" class="idplink" data-lat="43.9333" data-lon="2.15" data-entityid="https://identities.univ-jfc.fr/idp/prod" data-filtertext="CUFR Jean-François Champollion">CUFR Jean-François Champollion</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Ffede.supelec.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.4986" data-lon="2.0622" data-entityid="https://fede.supelec.fr/idp/shibboleth" data-filtertext="CentraleSupelec">CentraleSupelec</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.cue-lillenorddefrance.fr%2Fshibboleth" class="idplink" data-lat="50.6047" data-lon="3.1908" data-entityid="https://idp.cue-lillenorddefrance.fr/shibboleth" data-filtertext="Communauté d'Universités et d'Etablissements - Lille Nord de France">Communauté d'Universités et d'Etablissements - Lille Nord de France</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.crous-caen.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="49.1811" data-lon="-0.3712" data-entityid="https://idp.crous-caen.fr/idp/shibboleth" data-filtertext="Crous Caen">Crous Caen</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.cyceron.fr%3A8443%2Fidp%2Fshibboleth" class="idplink" data-lat="49.3145" data-lon="-0.355" data-entityid="https://idp.cyceron.fr:8443/idp/shibboleth" data-filtertext="Cyceron">Cyceron</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.ecam.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="45.7485" data-lon="4.8467" data-entityid="https://idp.ecam.fr/idp/shibboleth" data-filtertext="ECAM Lyon">ECAM Lyon</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.ehess.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.8667" data-lon="2.3333" data-entityid="https://idp.ehess.fr/idp/shibboleth" data-filtertext="EHESS">EHESS</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.enac.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.86" data-lon="2.35" data-entityid="https://idp.enac.fr/idp/shibboleth" data-filtertext="ENAC - Ecole Nationale de l'Aviation Civile">ENAC - Ecole Nationale de l'Aviation Civile</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.enib.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.3833" data-lon="-4.6167" data-entityid="https://idp.enib.fr/idp/shibboleth" data-filtertext="ENIB - Ecole Nationale d'Ingénieurs de Brest">ENIB - Ecole Nationale d'Ingénieurs de Brest</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidentites.enim.fr%2Fidp%2F" class="idplink" data-lat="49.0122" data-lon="6.3958" data-entityid="https://identites.enim.fr/idp/" data-filtertext="ENIM">ENIM</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fshibbo.enise.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="45.4333" data-lon="4.4" data-entityid="https://shibbo.enise.fr/idp/shibboleth" data-filtertext="ENISE">ENISE</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.enit.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="43.2333" data-lon="0.0833" data-entityid="https://idp.enit.fr/idp/shibboleth" data-filtertext="ENIT Ecole Nationale Ingénieurs Tarbes">ENIT Ecole Nationale Ingénieurs Tarbes</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.enitab.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="44.804" data-lon="-0.2627" data-entityid="https://idp.enitab.fr/idp/shibboleth" data-filtertext="ENITA de Bordeaux">ENITA de Bordeaux</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp1.ens-cachan.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.7963" data-lon="2.3366" data-entityid="https://idp1.ens-cachan.fr/idp/shibboleth" data-filtertext="ENS Cachan">ENS Cachan</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp-ensr.ens-rennes.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.0833" data-lon="-1.6833" data-entityid="https://idp-ensr.ens-rennes.fr/idp/shibboleth" data-filtertext="ENS Rennes">ENS Rennes</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fshibboleth.ens-lyon.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="45.7485" data-lon="4.8467" data-entityid="https://shibboleth.ens-lyon.fr/idp/shibboleth" data-filtertext="ENS de Lyon">ENS de Lyon</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.strasbourg.archi.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.6004" data-lon="7.7874" data-entityid="https://idp.strasbourg.archi.fr/idp/shibboleth" data-filtertext="ENSA Strasbourg">ENSA Strasbourg</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.ensai.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.0333" data-lon="-1.75" data-entityid="https://idp.ensai.fr/idp/shibboleth" data-filtertext="ENSAI - Ecole Nationale Statistique Analyse de l'Information">ENSAI - Ecole Nationale Statistique Analyse de l'Information</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.ensait.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="50.7" data-lon="3.1667" data-entityid="https://idp.ensait.fr/idp/shibboleth" data-filtertext="ENSAIT - Roubaix">ENSAIT - Roubaix</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fjanus.bordeaux.archi.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="44.8048" data-lon="-0.5954" data-entityid="https://janus.bordeaux.archi.fr/idp/shibboleth" data-filtertext="ENSAPBX - Ecole Nationale Supérieure d'Architecture et de Paysage de Bordeaux">ENSAPBX - Ecole Nationale Supérieure d'Architecture et de Paysage de Bordeaux</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidentites.ensea.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.86" data-lon="2.35" data-entityid="https://identites.ensea.fr/idp/shibboleth" data-filtertext="ENSEA">ENSEA</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fshibboleth.ensicaen.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="49.1811" data-lon="-0.3712" data-entityid="https://shibboleth.ensicaen.fr/idp/shibboleth" data-filtertext="ENSICAEN">ENSICAEN</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fshibboleth.ensiie.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.7685" data-lon="2.4187" data-entityid="https://shibboleth.ensiie.fr/idp/shibboleth" data-filtertext="ENSIIE">ENSIIE</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.ensma.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.86" data-lon="2.35" data-entityid="https://idp.ensma.fr/idp/shibboleth" data-filtertext="ENSMA - Ecole Nationale Supérieure de Mécanique et d'Aérotechnique">ENSMA - Ecole Nationale Supérieure de Mécanique et d'Aérotechnique</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.ens2m.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="47.25" data-lon="6.0333" data-entityid="https://idp.ens2m.fr/idp/shibboleth" data-filtertext="ENSMM Besançon - National School of Mechanical and Microtechnology">ENSMM Besançon - National School of Mechanical and Microtechnology</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.enssib.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="45.7655" data-lon="4.8755" data-entityid="https://idp.enssib.fr/idp/shibboleth" data-filtertext="ENSSIB">ENSSIB</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fident.ensta-bretagne.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.4" data-lon="-4.4833" data-entityid="https://ident.ensta-bretagne.fr/idp/shibboleth" data-filtertext="ENSTA Bretagne - Ecole Nationale Supérieure des Techniques Avancées">ENSTA Bretagne - Ecole Nationale Supérieure des Techniques Avancées</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fident.ensta.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.7167" data-lon="2.2491" data-entityid="https://ident.ensta.fr/idp/shibboleth" data-filtertext="ENSTA Paristech - Ecole Nationale Supérieure de Techniques Avancées">ENSTA Paristech - Ecole Nationale Supérieure de Techniques Avancées</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.entpe.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.86" data-lon="2.35" data-entityid="https://idp.entpe.fr/idp/shibboleth" data-filtertext="ENTPE - Vaulx en Velin">ENTPE - Vaulx en Velin</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fshibbo.ephe.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.8448" data-lon="2.3471" data-entityid="https://shibbo.ephe.fr/idp/shibboleth" data-filtertext="EPHE - Ecole Pratique des Hautes Etudes">EPHE - Ecole Pratique des Hautes Etudes</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Ffederation.esiee.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.8498" data-lon="2.5627" data-entityid="https://federation.esiee.fr/idp/shibboleth" data-filtertext="ESIEE Paris">ESIEE Paris</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fvip.espci.fr%2Fsaml2%2Fidp%2Fmetadata.php" class="idplink" data-lat="48.8667" data-lon="2.3333" data-entityid="https://vip.espci.fr/saml2/idp/metadata.php" data-filtertext="ESPCI ParisTech">ESPCI ParisTech</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.dijon.iufm.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="47.3167" data-lon="5.0167" data-entityid="https://idp.dijon.iufm.fr/idp/shibboleth" data-filtertext="ESPE de Bourgogne - Dpt MEEF">ESPE de Bourgogne - Dpt MEEF</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Ffederation.bretagne.iufm.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.86" data-lon="2.35" data-entityid="https://federation.bretagne.iufm.fr/idp/shibboleth" data-filtertext="ESPE de Bretagne">ESPE de Bretagne</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.etrs.terre.defense.gouv.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.86" data-lon="2.35" data-entityid="https://idp.etrs.terre.defense.gouv.fr/idp/shibboleth" data-filtertext="ETRS - Ecole des Transmissions">ETRS - Ecole des Transmissions</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.eurecom.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="43.5833" data-lon="7.1167" data-entityid="https://idp.eurecom.fr/idp/shibboleth" data-filtertext="EURECOM">EURECOM</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.ec-lille.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="50.611588" data-lon="3.142495" data-entityid="https://idp.ec-lille.fr/idp/shibboleth" data-filtertext="Ecole Centrale de LILLE">Ecole Centrale de LILLE</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidentites.ec-lyon.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="45.7773" data-lon="4.7748" data-entityid="https://identites.ec-lyon.fr/idp/shibboleth" data-filtertext="Ecole Centrale de Lyon">Ecole Centrale de Lyon</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fauth.centrale-marseille.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="43.3186" data-lon="5.4084" data-entityid="https://auth.centrale-marseille.fr/idp/shibboleth" data-filtertext="Ecole Centrale de Marseille">Ecole Centrale de Marseille</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fshibbo.ec-nantes.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="47.2165" data-lon="-1.5524" data-entityid="https://shibbo.ec-nantes.fr/idp/shibboleth" data-filtertext="Ecole Centrale de Nantes">Ecole Centrale de Nantes</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fshibboleth.ensi-bourges.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="47.1037" data-lon="2.352" data-entityid="https://shibboleth.ensi-bourges.fr/idp/shibboleth" data-filtertext="Ecole Nationale Supérieure d'Ingénieurs de Bourges">Ecole Nationale Supérieure d'Ingénieurs de Bourges</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fauth.chimie-paristech.fr%2Fidp%2Fsaml2%2Fmetadata" class="idplink" data-lat="48.8448" data-lon="2.3471" data-entityid="https://auth.chimie-paristech.fr/idp/saml2/metadata" data-filtertext="Ecole Nationale Supérieure de Chimie Paris">Ecole Nationale Supérieure de Chimie Paris</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fident-shib.ensc-rennes.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.112" data-lon="-1.6743" data-entityid="https://ident-shib.ensc-rennes.fr/idp/shibboleth" data-filtertext="Ecole Nationale Supérieure de Chimie de Rennes">Ecole Nationale Supérieure de Chimie de Rennes</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fshibboleth.envt.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="43.5995" data-lon="1.4332" data-entityid="https://shibboleth.envt.fr/idp/shibboleth" data-filtertext="Ecole Nationale Vétérinaire de Toulouse (ENVT)">Ecole Nationale Vétérinaire de Toulouse (ENVT)</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fshibbo.enc.sorbonne.fr%2Fidp%2Flogin.jsp%3FactionUrl%3D%252Fidp%252FAuthn%252FUserPassword" class="idplink" data-lat="45.4410678608" data-lon="0.620666656269" data-entityid="https://shibbo.enc.sorbonne.fr/idp/login.jsp?actionUrl=%2Fidp%2FAuthn%2FUserPassword" data-filtertext="Ecole Nationale des Chartes">Ecole Nationale des Chartes</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.ecole-navale.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.3908" data-lon="-4.4862" data-entityid="https://idp.ecole-navale.fr/idp/shibboleth" data-filtertext="Ecole Navale">Ecole Navale</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.polytechnique.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.7167" data-lon="2.2491" data-entityid="https://idp.polytechnique.fr/idp/shibboleth" data-filtertext="Ecole Polytechnique - Palaiseau">Ecole Polytechnique - Palaiseau</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fident.groupe-esa.com%2Fidp%2Fshibboleth" class="idplink" data-lat="48.86" data-lon="2.35" data-entityid="https://ident.groupe-esa.com/idp/shibboleth" data-filtertext="Ecole Supérieure d'Agriculture d'Angers">Ecole Supérieure d'Agriculture d'Angers</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fshibboleth.mines-ales.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="43.8338" data-lon="4.3596" data-entityid="https://shibboleth.mines-ales.fr/idp/shibboleth" data-filtertext="Ecole des Mines d'Alès">Ecole des Mines d'Alès</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fnte.gemtech.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="47.2173" data-lon="-1.5534" data-entityid="https://nte.gemtech.fr/idp/shibboleth" data-filtertext="Ecole des Mines de Nantes">Ecole des Mines de Nantes</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fshibbo.emse.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="45.2474" data-lon="4.7825" data-entityid="https://shibbo.emse.fr/idp/shibboleth" data-filtertext="Ecole des Mines de Saint-Etienne">Ecole des Mines de Saint-Etienne</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.ens.fr%2Fidp%2Fidp" class="idplink" data-lat="48.8667" data-lon="2.3333" data-entityid="https://idp.ens.fr/idp/idp" data-filtertext="Ecole normale supérieure">Ecole normale supérieure</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fcas.st-cyr.terre.defense.gouv.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="47.9" data-lon="-2.1167" data-entityid="https://cas.st-cyr.terre.defense.gouv.fr/idp/shibboleth" data-filtertext="Ecoles de Saint- Cyr Coëtquidan">Ecoles de Saint- Cyr Coëtquidan</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fcas.educagri.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="47.3167" data-lon="5.0167" data-entityid="https://cas.educagri.fr/idp/shibboleth" data-filtertext="Educagri">Educagri</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Ffim-hn-02-idp.orion.education.fr" class="idplink" data-lat="48.86" data-lon="2.35" data-entityid="https://fim-hn-02-idp.orion.education.fr" data-filtertext="Education Nationale">Education Nationale</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Ftamana.msh-paris.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.86" data-lon="2.35" data-entityid="https://tamana.msh-paris.fr/idp/shibboleth" data-filtertext="FMSH Fondation Maison des Sciences de l'Homme">FMSH Fondation Maison des Sciences de l'Homme</a></li>
+<li><a href="/sso?entity_id=urn%3Afi%3Afer.hubhn02%3A1.0" class="idplink" data-lat="48.86" data-lon="2.35" data-entityid="urn:fi:fer.hubhn02:1.0" data-filtertext="French National Education of Federation - HUB IDP HN02 FER">French National Education of Federation - HUB IDP HN02 FER</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.ifremer.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.3908" data-lon="-4.4862" data-entityid="https://idp.ifremer.fr/idp/shibboleth" data-filtertext="French Research Institute for Exploitation of the Sea">French Research Institute for Exploitation of the Sea</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.renater.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.827941" data-lon="2.344493" data-entityid="https://idp.renater.fr/idp/shibboleth" data-filtertext="GIP RENATER">GIP RENATER</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fshibboleth.upmf-grenoble.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="45.1715" data-lon="5.7224" data-entityid="https://shibboleth.upmf-grenoble.fr/idp/shibboleth" data-filtertext="Grenoble 2 University - UPMF">Grenoble 2 University - UPMF</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fshibboleth.grenoble-inp.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="45.1715" data-lon="5.7224" data-entityid="https://shibboleth.grenoble-inp.fr/idp/shibboleth" data-filtertext="Grenoble INP - Institut polytechnique de Grenoble">Grenoble INP - Institut polytechnique de Grenoble</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fshibb-prod.eseo.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="47.5333" data-lon="-0.5333" data-entityid="https://shibb-prod.eseo.fr/idp/shibboleth" data-filtertext="Groupe ESEO">Groupe ESEO</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.hec.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.86" data-lon="2.35" data-entityid="https://idp.hec.fr/idp/shibboleth" data-filtertext="HEC Paris">HEC Paris</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidpshib01.ifma.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="45.7833" data-lon="3.0833" data-entityid="https://idpshib01.ifma.fr/idp/shibboleth" data-filtertext="IFMA Clermont-Ferrand - Institut Francais de Mecanique Avancee">IFMA Clermont-Ferrand - Institut Francais de Mecanique Avancee</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fsesame.ifsttar.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.86" data-lon="2.35" data-entityid="https://sesame.ifsttar.fr/idp/shibboleth" data-filtertext="IFSTTAR">IFSTTAR</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.inalco.fr%2Fidp" class="idplink" data-lat="48.8667" data-lon="2.3333" data-entityid="https://idp.inalco.fr/idp" data-filtertext="INALCO - Institut National des Langues et Civilisations Orientales">INALCO - Institut National des Langues et Civilisations Orientales</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Ffederation.ined.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.8667" data-lon="2.3333" data-entityid="https://federation.ined.fr/idp/shibboleth" data-filtertext="INED - Institut National d'Etudes Démographiques">INED - Institut National d'Etudes Démographiques</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.inha.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.8667" data-lon="2.3333" data-entityid="https://idp.inha.fr/idp/shibboleth" data-filtertext="INHA - Institut National de l'Histoire de l'Art">INHA - Institut National de l'Histoire de l'Art</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.inp-toulouse.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.86" data-lon="2.35" data-entityid="https://idp.inp-toulouse.fr/idp/shibboleth" data-filtertext="INPT - Institut National Polytechnique de Toulouse">INPT - Institut National Polytechnique de Toulouse</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.inra.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.86" data-lon="2.35" data-entityid="https://idp.inra.fr/idp/shibboleth" data-filtertext="INRA - Institut National de la Recherche Agronomique">INRA - Institut National de la Recherche Agronomique</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp1.inria.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.8222" data-lon="2.1221" data-entityid="https://idp1.inria.fr/idp/shibboleth" data-filtertext="INRIA - Institut National de Recherche en Informatique et Automatique">INRIA - Institut National de Recherche en Informatique et Automatique</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.inshea.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.9" data-lon="2.2" data-entityid="https://idp.inshea.fr/idp/shibboleth" data-filtertext="INS HEA - Institut national supérieur de formation et de recherche pour l'éducation des jeunes handicapés et les enseignements adaptés">INS HEA - Institut national supérieur de formation et de recherche pour l'éducation des jeunes handicapés et les enseignements adaptés</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fshibboleth.insa-cvl.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="47.1037" data-lon="2.352" data-entityid="https://shibboleth.insa-cvl.fr/idp/shibboleth" data-filtertext="INSA CENTRE VAL DE LOIRE">INSA CENTRE VAL DE LOIRE</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fantimoine.insa-strasbourg.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.6004" data-lon="7.7874" data-entityid="https://antimoine.insa-strasbourg.fr/idp/shibboleth" data-filtertext="INSA Strasbourg">INSA Strasbourg</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Flogin.insa-lyon.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="45.7655" data-lon="4.8755" data-entityid="https://login.insa-lyon.fr/idp/shibboleth" data-filtertext="INSA de Lyon">INSA de Lyon</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.insa-rennes.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.112" data-lon="-1.6743" data-entityid="https://idp.insa-rennes.fr/idp/shibboleth" data-filtertext="INSA de Rennes">INSA de Rennes</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fshibboleth.insa-rouen.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="49.6174" data-lon="0.7581" data-entityid="https://shibboleth.insa-rouen.fr/idp/shibboleth" data-filtertext="INSA de Rouen">INSA de Rouen</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fsrv-fii.insa-toulouse.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.86" data-lon="2.35" data-entityid="https://srv-fii.insa-toulouse.fr/idp/shibboleth" data-filtertext="INSA de Toulouse">INSA de Toulouse</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.inserm.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.765" data-lon="2.3961" data-entityid="https://idp.inserm.fr/idp/shibboleth" data-filtertext="INSERM">INSERM</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.ipb.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="44.8404" data-lon="-0.5805" data-entityid="https://idp.ipb.fr/idp/shibboleth" data-filtertext="IPB - Bordeaux INP">IPB - Bordeaux INP</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fsso.ird.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.86" data-lon="2.35" data-entityid="https://sso.ird.fr/idp/shibboleth" data-filtertext="IRD - Institut de Recherche pour le Développement">IRD - Institut de Recherche pour le Développement</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.irstea.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="45.2474" data-lon="4.7825" data-entityid="https://idp.irstea.fr/idp/shibboleth" data-filtertext="IRSTEA - Institut national de recherche en sciences et technologies pour l'environnement et l'agriculture">IRSTEA - Institut national de recherche en sciences et technologies pour l'environnement et l'agriculture</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Feliot.isae.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.8222" data-lon="2.1221" data-entityid="https://eliot.isae.fr/idp/shibboleth" data-filtertext="ISAE">ISAE</a></li>
+<li><a href="/sso?entity_id=urn%3Amace%3Acru.fr%3Afederation%3Amontpellier.iufm.fr" class="idplink" data-lat="43.7667" data-lon="3.3461" data-entityid="urn:mace:cru.fr:federation:montpellier.iufm.fr" data-filtertext="IUFM de Montpellier">IUFM de Montpellier</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fshibboleth.enc.sorbonne.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.75" data-lon="2.3" data-entityid="https://shibboleth.enc.sorbonne.fr/idp/shibboleth" data-filtertext="Idp test shibboleth.enc.sorbonne.fr">Idp test shibboleth.enc.sorbonne.fr</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fir-lan-fid.images-et-reseaux.com%2Fidp%2Fshibboleth" class="idplink" data-lat="48.0333" data-lon="-1.75" data-entityid="https://ir-lan-fid.images-et-reseaux.com/idp/shibboleth" data-filtertext="Images et Réseaux - Pôle de compétitivité">Images et Réseaux - Pôle de compétitivité</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fsso.institutoptique.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.86" data-lon="2.35" data-entityid="https://sso.institutoptique.fr/idp/shibboleth" data-filtertext="Institut Optique Graduate School">Institut Optique Graduate School</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.bnu.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="47.1767373722" data-lon="-0.488263505424" data-entityid="https://idp.bnu.fr/idp/shibboleth" data-filtertext="Library national and university of Strasbourg">Library national and university of Strasbourg</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fauth.mines-paristech.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.8493" data-lon="2.33" data-entityid="https://auth.mines-paristech.fr/idp/shibboleth" data-filtertext="MINES ParisTech">MINES ParisTech</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fcerbere2.mines-douai.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="50.4" data-lon="3.1333" data-entityid="https://cerbere2.mines-douai.fr/idp/shibboleth" data-filtertext="Mines Douai">Mines Douai</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fshib.mines-albi.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="43.9333" data-lon="2.15" data-entityid="https://shib.mines-albi.fr/idp/shibboleth" data-filtertext="Mines-Albi">Mines-Albi</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Ffederation.umontpellier.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.86" data-lon="2.35" data-entityid="https://federation.umontpellier.fr/idp/shibboleth" data-filtertext="Montpellier University">Montpellier University</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Ffid.mnhn.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.86" data-lon="2.35" data-entityid="https://fid.mnhn.fr/idp/shibboleth" data-filtertext="Muséum National d'Histoire Naturelle (MNHN)">Muséum National d'Histoire Naturelle (MNHN)</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.vet-alfort.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.8" data-lon="2.4333" data-entityid="https://idp.vet-alfort.fr/idp/shibboleth" data-filtertext="National Veterinary School of Alfort">National Veterinary School of Alfort</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.normandie-univ.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="49.4631" data-lon="1.0936" data-entityid="https://idp.normandie-univ.fr/idp/shibboleth" data-filtertext="Normandie Université">Normandie Université</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fshibboleth.obspm.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.8667" data-lon="2.3333" data-entityid="https://shibboleth.obspm.fr/idp/shibboleth" data-filtertext="Observatoire de Paris">Observatoire de Paris</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fshibidp.oca.eu%2Fidp%2Fshibboleth" class="idplink" data-lat="48.86" data-lon="2.35" data-entityid="https://shibidp.oca.eu/idp/shibboleth" data-filtertext="Observatoire de la Côte d'Azur">Observatoire de la Côte d'Azur</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.hesam.eu%2Fidp%2Fshibboleth" class="idplink" data-lat="48.8667" data-lon="2.3333" data-entityid="https://idp.hesam.eu/idp/shibboleth" data-filtertext="PRES HESAM - Hautes Etudes-Sorbonne-Arts et Métiers">PRES HESAM - Hautes Etudes-Sorbonne-Arts et Métiers</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.univ-psl.fr%2Fidp%2Fsaml2%2Fmetadata" class="idplink" data-lat="48.8448" data-lon="2.3471" data-entityid="https://idp.univ-psl.fr/idp/saml2/metadata" data-filtertext="PSL Research University">PSL Research University</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Ffederation.u-pem.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.3226" data-lon="2.8859" data-entityid="https://federation.u-pem.fr/idp/shibboleth" data-filtertext="Paris-Est Marne-la-Vallée University">Paris-Est Marne-la-Vallée University</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fvm-idp.paris-sorbonne.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.8667" data-lon="2.3333" data-entityid="https://vm-idp.paris-sorbonne.fr/idp/shibboleth" data-filtertext="Paris-Sorbonne Universite">Paris-Sorbonne Universite</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.u-psud.fr%2Fidp" class="idplink" data-lat="48.7956" data-lon="2.308" data-entityid="https://idp.u-psud.fr/idp" data-filtertext="Paris-Sud University">Paris-Sud University</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fstrong.renater.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="42.6707" data-lon="2.6216" data-entityid="https://strong.renater.fr/idp/shibboleth" data-filtertext="RENATER - 2FA">RENATER - 2FA</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fshibboleth.ac-limoges.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.86" data-lon="2.35" data-entityid="https://shibboleth.ac-limoges.fr/idp/shibboleth" data-filtertext="Rectorat Limoges shib">Rectorat Limoges shib</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Ffederation.ac-strasbourg.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.8666410475" data-lon="3.57713286067" data-entityid="https://federation.ac-strasbourg.fr/idp/shibboleth" data-filtertext="Rectorat de Strasbourg">Rectorat de Strasbourg</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fcas.ac-martinique.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="14.6052" data-lon="-61.0754" data-entityid="https://cas.ac-martinique.fr/idp/shibboleth" data-filtertext="Rectorat de la Martinique">Rectorat de la Martinique</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fcas-etu.crous-lyon.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="45.7485" data-lon="4.8467" data-entityid="https://cas-etu.crous-lyon.fr/idp/shibboleth" data-filtertext="Résidence Crous de Lyon">Résidence Crous de Lyon</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.sciencespobordeaux.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="44.8404" data-lon="-0.5805" data-entityid="https://idp.sciencespobordeaux.fr/idp/shibboleth" data-filtertext="Sciences Po Bordeaux">Sciences Po Bordeaux</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fshibboleth.sciencespo-grenoble.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="45.1715" data-lon="5.7224" data-entityid="https://shibboleth.sciencespo-grenoble.fr/idp/shibboleth" data-filtertext="Sciences Po Grenoble">Sciences Po Grenoble</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Ffederation.sciences-po.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.8667" data-lon="2.3333" data-entityid="https://federation.sciences-po.fr/idp/shibboleth" data-filtertext="Sciences Po Paris">Sciences Po Paris</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fident-shib.sciencespo-rennes.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.112" data-lon="-1.6743" data-entityid="https://ident-shib.sciencespo-rennes.fr/idp/shibboleth" data-filtertext="Sciences Po Rennes">Sciences Po Rennes</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.sorbonne-universites.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="49.4167" data-lon="2.8333" data-entityid="https://idp.sorbonne-universites.fr/idp/shibboleth" data-filtertext="Sorbonne University">Sorbonne University</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidptl.telecom-lille.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.86" data-lon="2.35" data-entityid="https://idptl.telecom-lille.fr/idp/shibboleth" data-filtertext="Telecom Lille">Telecom Lille</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.telecom-lille1.eu%2Fidp%2Fshibboleth" class="idplink" data-lat="48.86" data-lon="2.35" data-entityid="https://idp.telecom-lille1.eu/idp/shibboleth" data-filtertext="Telecom Lille1">Telecom Lille1</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidpr.tem-tsp.eu%2Fidp%2Fshibboleth" class="idplink" data-lat="48.6333" data-lon="2.45" data-entityid="https://idpr.tem-tsp.eu/idp/shibboleth" data-filtertext="Telecom School of Management and Telecom SudParis">Telecom School of Management and Telecom SudParis</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.telecom-bretagne.eu%2Fidp%2Fshibboleth" class="idplink" data-lat="48.3908" data-lon="-4.4862" data-entityid="https://idp.telecom-bretagne.eu/idp/shibboleth" data-filtertext="Télécom Bretagne">Télécom Bretagne</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.telecom-paristech.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.8322" data-lon="2.3561" data-entityid="https://idp.telecom-paristech.fr/idp/shibboleth" data-filtertext="Télécom ParisTech">Télécom ParisTech</a></li>
+<li><a href="/sso?entity_id=urn%3Amace%3Acru.fr%3Afederation%3Autc.fr" class="idplink" data-lat="49.4167" data-lon="2.8333" data-entityid="urn:mace:cru.fr:federation:utc.fr" data-filtertext="UTC - Université de Technologie de Compiègne">UTC - Université de Technologie de Compiègne</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Ffederation-identite.univ-paris13.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.8667" data-lon="2.3333" data-entityid="https://federation-identite.univ-paris13.fr/idp/shibboleth" data-filtertext="University Paris 13">University Paris 13</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.univ-paris3.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.8667" data-lon="2.3333" data-entityid="https://idp.univ-paris3.fr/idp/shibboleth" data-filtertext="University Paris 3 - Sorbonne Nouvelle">University Paris 3 - Sorbonne Nouvelle</a></li>
+<li><a href="/sso?entity_id=urn%3Amace%3Acru.fr%3Afederation%3Auniv-angers.fr" class="idplink" data-lat="47.4738" data-lon="-0.5477" data-entityid="urn:mace:cru.fr:federation:univ-angers.fr" data-filtertext="University of Angers">University of Angers</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.univ-fcomte.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="47.25" data-lon="6.0333" data-entityid="https://idp.univ-fcomte.fr/idp/shibboleth" data-filtertext="University of Franche-Comte">University of Franche-Comte</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Ffederation.upf.pf%2Fidp%2Fshibboleth" class="idplink" data-lat="-15" data-lon="-140" data-entityid="https://federation.upf.pf/idp/shibboleth" data-filtertext="University of French Polynesia">University of French Polynesia</a></li>
+<li><a href="/sso?entity_id=urn%3Amace%3Acru.fr%3Afederation%3Auniv-nantes.fr" class="idplink" data-lat="47.2165" data-lon="-1.5524" data-entityid="urn:mace:cru.fr:federation:univ-nantes.fr" data-filtertext="University of Nantes (FRANCE)">University of Nantes (FRANCE)</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fshib1.univ-nc.nc%2Fidp%2Fshibboleth" class="idplink" data-lat="-22.2667" data-lon="166.45" data-entityid="https://shib1.univ-nc.nc/idp/shibboleth" data-filtertext="University of New-Caledonia">University of New-Caledonia</a></li>
+<li><a href="/sso?entity_id=urn%3Amace%3Acru.fr%3Afederation%3Aunice.fr" class="idplink" data-lat="43.7136" data-lon="7.2595" data-entityid="urn:mace:cru.fr:federation:unice.fr" data-filtertext="University of Nice Sophia Antipolis">University of Nice Sophia Antipolis</a></li>
+<li><a href="/sso?entity_id=urn%3Amace%3Acru.fr%3Afederation%3Auniv-rennes1.fr" class="idplink" data-lat="48.112" data-lon="-1.6743" data-entityid="urn:mace:cru.fr:federation:univ-rennes1.fr" data-filtertext="University of Rennes 1">University of Rennes 1</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fshibboleth.u-grenoble3.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="45.1715" data-lon="5.7224" data-entityid="https://shibboleth.u-grenoble3.fr/idp/shibboleth" data-filtertext="Université  Stendhal - Grenoble 3">Université  Stendhal - Grenoble 3</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.u-bordeaux-montaigne.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="44.8404" data-lon="-0.5805" data-entityid="https://idp.u-bordeaux-montaigne.fr/idp/shibboleth" data-filtertext="Université Bordeaux Montaigne">Université Bordeaux Montaigne</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fid.ucly.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="50.6603" data-lon="3.0716" data-entityid="https://id.ucly.fr/idp/shibboleth" data-filtertext="Université Catholique de Lyon">Université Catholique de Lyon</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fwww.uco.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="47.4738" data-lon="-0.5477" data-entityid="https://www.uco.fr/idp/shibboleth" data-filtertext="Université Catholique de l'Ouest - Angers">Université Catholique de l'Ouest - Angers</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fshibboleth.univ-paris-est.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.8667" data-lon="2.3333" data-entityid="https://shibboleth.univ-paris-est.fr/idp/shibboleth" data-filtertext="Université Paris - Est">Université Paris - Est</a></li>
+<li><a href="/sso?entity_id=urn%3Amace%3Acru.fr%3Afederation%3Auniv-paris1.fr" class="idplink" data-lat="48.8667" data-lon="2.3333" data-entityid="urn:mace:cru.fr:federation:univ-paris1.fr" data-filtertext="Université Paris 1 Panthéon-Sorbonne">Université Paris 1 Panthéon-Sorbonne</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fshib.u-paris10.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.8914" data-lon="2.2003" data-entityid="https://shib.u-paris10.fr/idp/shibboleth" data-filtertext="Université Paris Ouest Nanterre La Défense">Université Paris Ouest Nanterre La Défense</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Ftonga.univ-tlse2.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="43.5995" data-lon="1.4332" data-entityid="https://tonga.univ-tlse2.fr/idp/shibboleth" data-filtertext="Université Toulouse 2 - Mirail">Université Toulouse 2 - Mirail</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.univ-amu.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="43.2854" data-lon="5.3761" data-entityid="https://idp.univ-amu.fr/idp/shibboleth" data-filtertext="Université d'Aix-Marseille">Université d'Aix-Marseille</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.univ-artois.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="50.2918" data-lon="2.7803" data-entityid="https://idp.univ-artois.fr/idp/shibboleth" data-filtertext="Université d'Artois">Université d'Artois</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.univ-avignon.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="43.9454" data-lon="4.8102" data-entityid="https://idp.univ-avignon.fr/idp/shibboleth" data-filtertext="Université d'Avignon et des Pays de Vaucluse">Université d'Avignon et des Pays de Vaucluse</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fshibboleth.univ-evry.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.6328" data-lon="2.4405" data-entityid="https://shibboleth.univ-evry.fr/idp/shibboleth" data-filtertext="Université d'Evry Val d'Essonne">Université d'Evry Val d'Essonne</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.univ-orleans.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="47.9029" data-lon="1.9039" data-entityid="https://idp.univ-orleans.fr/idp/shibboleth" data-filtertext="Université d'Orléans">Université d'Orléans</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.u-bordeaux.fr%2Fidp_ubx%2Fshibboleth" class="idplink" data-lat="44.8404" data-lon="-0.5805" data-entityid="https://idp.u-bordeaux.fr/idp_ubx/shibboleth" data-filtertext="Université de Bordeaux">Université de Bordeaux</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.u-bordeaux1.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="47.9666359073" data-lon="5.1263346704" data-entityid="https://idp.u-bordeaux1.fr/idp/shibboleth" data-filtertext="Université de Bordeaux 1">Université de Bordeaux 1</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.u-bordeaux4.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.9955985574" data-lon="2.69892057506" data-entityid="https://idp.u-bordeaux4.fr/idp/shibboleth" data-filtertext="Université de Bordeaux IV - Montesquieu">Université de Bordeaux IV - Montesquieu</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fshibboleth.u-bourgogne.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.9357" data-lon="5.107" data-entityid="https://shibboleth.u-bourgogne.fr/idp/shibboleth" data-filtertext="Université de Bourgogne">Université de Bourgogne</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Ffederation2.univ-brest.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.3908" data-lon="-4.4862" data-entityid="https://federation2.univ-brest.fr/idp/shibboleth" data-filtertext="Université de Bretagne Occidentale">Université de Bretagne Occidentale</a></li>
+<li><a href="/sso?entity_id=urn%3Amace%3Acru.fr%3Afederation%3Auniv-ubs.fr" class="idplink" data-lat="47.75" data-lon="-3.3667" data-entityid="urn:mace:cru.fr:federation:univ-ubs.fr" data-filtertext="Université de Bretagne Sud">Université de Bretagne Sud</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.unicaen.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="49.1972" data-lon="-0.3268" data-entityid="https://idp.unicaen.fr/idp/shibboleth" data-filtertext="Université de Caen - Basse Normandie">Université de Caen - Basse Normandie</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.u-cergy.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="49.0364" data-lon="2.0761" data-entityid="https://idp.u-cergy.fr/idp/shibboleth" data-filtertext="Université de Cergy Pontoise">Université de Cergy Pontoise</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.u-clermont1.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.2818" data-lon="4.9697" data-entityid="https://idp.u-clermont1.fr/idp/shibboleth" data-filtertext="Université de Clermont Ferrand 1 - Auvergne">Université de Clermont Ferrand 1 - Auvergne</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.univ-bpclermont.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.2818" data-lon="4.9697" data-entityid="https://idp.univ-bpclermont.fr/idp/shibboleth" data-filtertext="Université de Clermont-Ferrand 2 - Blaise Pascal">Université de Clermont-Ferrand 2 - Blaise Pascal</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fshibboleth.univ-corse.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.86" data-lon="2.35" data-entityid="https://shibboleth.univ-corse.fr/idp/shibboleth" data-filtertext="Université de Corse">Université de Corse</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fshibboleth.ujf-grenoble.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="45.1715" data-lon="5.7224" data-entityid="https://shibboleth.ujf-grenoble.fr/idp/shibboleth" data-filtertext="Université de Grenoble 1 - Joseph Fourier">Université de Grenoble 1 - Joseph Fourier</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.uha.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="47.7381" data-lon="7.3479" data-entityid="https://idp.uha.fr/idp/shibboleth" data-filtertext="Université de Haute Alsace">Université de Haute Alsace</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fapps.univ-lr.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="46.1667" data-lon="-1.15" data-entityid="https://apps.univ-lr.fr/idp/shibboleth" data-filtertext="Université de La Rochelle">Université de La Rochelle</a></li>
+<li><a href="/sso?entity_id=urn%3Amace%3Acru.fr%3Afederation%3Auniv-lille1.fr" class="idplink" data-lat="49.1775" data-lon="3.475" data-entityid="urn:mace:cru.fr:federation:univ-lille1.fr" data-filtertext="Université de Lille - Sciences et Technologies">Université de Lille - Sciences et Technologies</a></li>
+<li><a href="/sso?entity_id=urn%3Amace%3Acru.fr%3Afederation%3Auniv-lille2.fr" class="idplink" data-lat="50.633" data-lon="3.0586" data-entityid="urn:mace:cru.fr:federation:univ-lille2.fr" data-filtertext="Université de Lille 2 Droit et Santé">Université de Lille 2 Droit et Santé</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.univ-lille3.fr%2Fidp" class="idplink" data-lat="48.86" data-lon="2.35" data-entityid="https://idp.univ-lille3.fr/idp" data-filtertext="Université de Lille 3">Université de Lille 3</a></li>
+<li><a href="/sso?entity_id=urn%3Amace%3Acru.fr%3Afederation%3Aunilim.fr" class="idplink" data-lat="45.8315" data-lon="1.2578" data-entityid="urn:mace:cru.fr:federation:unilim.fr" data-filtertext="Université de Limoges">Université de Limoges</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.univ-lorraine.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.6833" data-lon="6.2" data-entityid="https://idp.univ-lorraine.fr/idp/shibboleth" data-filtertext="Université de Lorraine">Université de Lorraine</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.universite-lyon.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="45.7485" data-lon="4.8467" data-entityid="https://idp.universite-lyon.fr/idp/shibboleth" data-filtertext="Université de Lyon">Université de Lyon</a></li>
+<li><a href="/sso?entity_id=urn%3Amace%3Acru.fr%3Afederation%3Auniv-lyon1.fr" class="idplink" data-lat="45.7485" data-lon="4.8467" data-entityid="urn:mace:cru.fr:federation:univ-lyon1.fr" data-filtertext="Université de Lyon 1 - Claude Bernard">Université de Lyon 1 - Claude Bernard</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.univ-lyon2.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="45.7485" data-lon="4.8467" data-entityid="https://idp.univ-lyon2.fr/idp/shibboleth" data-filtertext="Université de Lyon 2 - Lumière">Université de Lyon 2 - Lumière</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.univ-lyon3.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="45.7485" data-lon="4.8467" data-entityid="https://idp.univ-lyon3.fr/idp/shibboleth" data-filtertext="Université de Lyon 3 - Jean Moulin">Université de Lyon 3 - Jean Moulin</a></li>
+<li><a href="/sso?entity_id=urn%3Amace%3Acru.fr%3Afederation%3Auniv-montp1.fr" class="idplink" data-lat="43.6109" data-lon="3.8772" data-entityid="urn:mace:cru.fr:federation:univ-montp1.fr" data-filtertext="Université de Montpellier 1">Université de Montpellier 1</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Ffederationrenater.univ-montp2.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="43.6109" data-lon="3.8772" data-entityid="https://federationrenater.univ-montp2.fr/idp/shibboleth" data-filtertext="Université de Montpellier 2">Université de Montpellier 2</a></li>
+<li><a href="/sso?entity_id=urn%3Amace%3Acru.fr%3Afederation%3Auniv-montp3.fr" class="idplink" data-lat="43.6109" data-lon="3.8772" data-entityid="urn:mace:cru.fr:federation:univ-montp3.fr" data-filtertext="Université de Montpellier 3">Université de Montpellier 3</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Ffederation.unimes.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="43.842399" data-lon="4.356993" data-entityid="https://federation.unimes.fr/idp/shibboleth" data-filtertext="Université de Nimes">Université de Nimes</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.u-paris2.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.8667" data-lon="2.3333" data-entityid="https://idp.u-paris2.fr/idp/shibboleth" data-filtertext="Université de Paris 2 - Panthéon Assas">Université de Paris 2 - Panthéon Assas</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.parisdescartes.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.86" data-lon="2.35" data-entityid="https://idp.parisdescartes.fr/idp/shibboleth" data-filtertext="Université de Paris 5 - Paris Descartes">Université de Paris 5 - Paris Descartes</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.upmc.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.8667" data-lon="2.3333" data-entityid="https://idp.upmc.fr/idp/shibboleth" data-filtertext="Université de Paris 6 - Pierre et Marie Curie">Université de Paris 6 - Pierre et Marie Curie</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fauth.univ-paris-diderot.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.8667" data-lon="2.3333" data-entityid="https://auth.univ-paris-diderot.fr/idp/shibboleth" data-filtertext="Université de Paris 7 - Denis Diderot">Université de Paris 7 - Denis Diderot</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.univ-paris8.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.8667" data-lon="2.3333" data-entityid="https://idp.univ-paris8.fr/idp/shibboleth" data-filtertext="Université de Paris 8 - Vincennes">Université de Paris 8 - Vincennes</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.ent.dauphine.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.8667" data-lon="2.3333" data-entityid="https://idp.ent.dauphine.fr/idp/shibboleth" data-filtertext="Université de Paris 9 - Dauphine">Université de Paris 9 - Dauphine</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fauth.u-pec.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.8221" data-lon="2.4122" data-entityid="https://auth.u-pec.fr/idp/shibboleth" data-filtertext="Université de Paris Est Créteil - UPEC">Université de Paris Est Créteil - UPEC</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.univ-paris4.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.8667" data-lon="2.3333" data-entityid="https://idp.univ-paris4.fr/idp/shibboleth" data-filtertext="Université de Paris IV - Sorbonne">Université de Paris IV - Sorbonne</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fauth.univ-pau.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="43.3" data-lon="-0.3667" data-entityid="https://auth.univ-pau.fr/idp/shibboleth" data-filtertext="Université de Pau et des Pays de l'Adour">Université de Pau et des Pays de l'Adour</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Ffederation2.univ-perp.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="42.6962" data-lon="2.8971" data-entityid="https://federation2.univ-perp.fr/idp/shibboleth" data-filtertext="Université de Perpignan Via Domitia">Université de Perpignan Via Domitia</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.u-picardie.fr%2Fshibboleth" class="idplink" data-lat="49.9" data-lon="2.3" data-entityid="https://idp.u-picardie.fr/shibboleth" data-filtertext="Université de Picardie Jules Verne">Université de Picardie Jules Verne</a></li>
+<li><a href="/sso?entity_id=urn%3Amace%3Acru.fr%3Afederation%3Auniv-poitiers.fr" class="idplink" data-lat="46.5833" data-lon="0.3333" data-entityid="urn:mace:cru.fr:federation:univ-poitiers.fr" data-filtertext="Université de Poitiers">Université de Poitiers</a></li>
+<li><a href="/sso?entity_id=urn%3Amace%3Acru.fr%3Afederation%3Auniv-reims.fr" class="idplink" data-lat="48.86" data-lon="2.35" data-entityid="urn:mace:cru.fr:federation:univ-reims.fr" data-filtertext="Université de Reims Champagne-Ardenne">Université de Reims Champagne-Ardenne</a></li>
+<li><a href="/sso?entity_id=urn%3Amace%3Acru.fr%3Afederation%3Auhb.fr" class="idplink" data-lat="48.112" data-lon="-1.6743" data-entityid="urn:mace:cru.fr:federation:uhb.fr" data-filtertext="Université de Rennes 2 - Haute Bretagne">Université de Rennes 2 - Haute Bretagne</a></li>
+<li><a href="/sso?entity_id=urn%3Amace%3Acru.fr%3Afederation%3Auniv-rouen.fr" class="idplink" data-lat="49.4631" data-lon="1.0936" data-entityid="urn:mace:cru.fr:federation:univ-rouen.fr" data-filtertext="Université de Rouen">Université de Rouen</a></li>
+<li><a href="/sso?entity_id=urn%3Amace%3Acru.fr%3Afederation%3Auniv-st-etienne.fr" class="idplink" data-lat="45.4333" data-lon="4.4" data-entityid="urn:mace:cru.fr:federation:univ-st-etienne.fr" data-filtertext="Université de Saint-Etienne - Jean Monnet">Université de Saint-Etienne - Jean Monnet</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fshibboleth.univ-savoie.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="45.1715" data-lon="5.7224" data-entityid="https://shibboleth.univ-savoie.fr/idp/shibboleth" data-filtertext="Université de Savoie">Université de Savoie</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.unistra.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.6004" data-lon="7.7874" data-entityid="https://idp.unistra.fr/idp/shibboleth" data-filtertext="Université de Strasbourg">Université de Strasbourg</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Ffederation.utbm.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.86" data-lon="2.35" data-entityid="https://federation.utbm.fr/idp/shibboleth" data-filtertext="Université de Technologie de Belfort-Montbéliard">Université de Technologie de Belfort-Montbéliard</a></li>
+<li><a href="/sso?entity_id=urn%3Amace%3Acru.fr%3Afederation%3Autt.fr" class="idplink" data-lat="48.3007" data-lon="4.0852" data-entityid="urn:mace:cru.fr:federation:utt.fr" data-filtertext="Université de Technologie de Troyes">Université de Technologie de Troyes</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fshibboleth.univ-toulouse.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="43.5995" data-lon="1.4332" data-entityid="https://shibboleth.univ-toulouse.fr/idp/shibboleth" data-filtertext="Université de Toulouse">Université de Toulouse</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.ut-capitole.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="43.5995" data-lon="1.4332" data-entityid="https://idp.ut-capitole.fr/idp/shibboleth" data-filtertext="Université de Toulouse 1 Capitole">Université de Toulouse 1 Capitole</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fshibboleth.ups-tlse.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="43.5995" data-lon="1.4332" data-entityid="https://shibboleth.ups-tlse.fr/idp/shibboleth" data-filtertext="Université de Toulouse 3 - Paul Sabatier">Université de Toulouse 3 - Paul Sabatier</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.univ-tours.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="47.3948" data-lon="0.704" data-entityid="https://idp.univ-tours.fr/idp/shibboleth" data-filtertext="Université de Tours">Université de Tours</a></li>
+<li><a href="/sso?entity_id=urn%3Amace%3Acru.fr%3Afederation%3Auniv-valenciennes.fr" class="idplink" data-lat="50.3571" data-lon="3.5279" data-entityid="urn:mace:cru.fr:federation:univ-valenciennes.fr" data-filtertext="Université de Valenciennes">Université de Valenciennes</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fshibboleth.uvsq.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.8036" data-lon="2.1342" data-entityid="https://shibboleth.uvsq.fr/idp/shibboleth" data-filtertext="Université de Versailles - Saint Quentin en Yvelines">Université de Versailles - Saint Quentin en Yvelines</a></li>
+<li><a href="/sso?entity_id=urn%3Amace%3Acru.fr%3Afederation%3Auniv-reunion.fr" class="idplink" data-lat="-20.877684" data-lon="55.447333" data-entityid="urn:mace:cru.fr:federation:univ-reunion.fr" data-filtertext="Université de la Réunion">Université de la Réunion</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.univ-ag.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.86" data-lon="2.35" data-entityid="https://idp.univ-ag.fr/idp/shibboleth" data-filtertext="Université des Antilles et de la Guyane">Université des Antilles et de la Guyane</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fidp.univ-lehavre.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.86" data-lon="2.35" data-entityid="https://idp.univ-lehavre.fr/idp/shibboleth" data-filtertext="Université du Havre">Université du Havre</a></li>
+<li><a href="/sso?entity_id=urn%3Amace%3Acru.fr%3Afederation%3Auniv-littoral.fr" class="idplink" data-lat="51.05" data-lon="2.3667" data-entityid="urn:mace:cru.fr:federation:univ-littoral.fr" data-filtertext="Université du Littoral Côte d'Opale">Université du Littoral Côte d'Opale</a></li>
+<li><a href="/sso?entity_id=urn%3Amace%3Acru.fr%3Afederation%3Auniv-lemans.fr" class="idplink" data-lat="48.0004" data-lon="0.2047" data-entityid="urn:mace:cru.fr:federation:univ-lemans.fr" data-filtertext="Université du Maine - Le Mans">Université du Maine - Le Mans</a></li>
+<li><a href="/sso?entity_id=urn%3Amace%3Acru.fr%3Afederation%3Auniv-tln.fr" class="idplink" data-lat="43.136700" data-lon="6.018677" data-entityid="urn:mace:cru.fr:federation:univ-tln.fr" data-filtertext="Université du Sud Toulon Var">Université du Sud Toulon Var</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Fambre.vetagro-sup.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="45.7485" data-lon="4.8467" data-entityid="https://ambre.vetagro-sup.fr/idp/shibboleth" data-filtertext="Vetagro Sup">Vetagro Sup</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Faccess-check.edugain.org%2Fsimplesaml%2Fsaml2%2Fidp%2Fmetadata.php" class="idplink" data-lat="48.86" data-lon="2.35" data-entityid="https://access-check.edugain.org/simplesaml/saml2/idp/metadata.php" data-filtertext="eduGAIN Access Check">eduGAIN Access Check</a></li>
+<li><a href="/sso?entity_id=https%3A%2F%2Frigal.enpc.fr%2Fidp%2Fshibboleth" class="idplink" data-lat="48.85" data-lon="2.6" data-entityid="https://rigal.enpc.fr/idp/shibboleth" data-filtertext="École des Ponts ParisTech">École des Ponts ParisTech</a></li>
+
+
+            </ul>
+          </div><!--/.well -->
+        </div><!--/span-->
+
+        <div class="span7">
+	  <div class="row-fluid">
+	    <div id="map" class="span12">Si la carte ne s'affiche pas, sélectionnez votre établissement d'origine dans la liste.</div>
+	  </div>
+        </div><!--/span-->
+
+      </div><!--/row-->
+
+
+
+      <hr>
+
+      <footer>
+          <p>&copy; UNPIdF 2014 — <a href="licences">licences</a></p>
+          
+<!--
+<br>
+<span><img src="/media/local/captiveportal-univ-xyz.png" alt="Crous de Grenoble" /></span>
+-->
+
+      </footer>
+
+    </div><!--/.fluid-container-->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/static/jquery/js/jquery-1.10.2.min.js"></script>
+    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+    
+<script src="/static/leaflet/leaflet.js"></script>
+<!-- script src="/static/univnautes/js/Leaflet-Control.Fit.js"></script -->
+<script src="/static/leaflet.markercluster/leaflet.markercluster.js"></script>
+
+
+
+<script>
+	var start_bounds = [[41.1,-5.53],[51.5,9.91]];
+	var start_zoom = 6;
+</script>
+
+<script src="/static/univnautes/js/univnautes.js"></script>
+
+
+
+  </body>
+</html>

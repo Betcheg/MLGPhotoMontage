@@ -1,7 +1,9 @@
 package betcheg.mlgphotomontage;
 
 import android.app.ActionBar;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
@@ -16,6 +18,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
+import angtrim.com.fivestarslibrary.FiveStarsDialog;
+import angtrim.com.fivestarslibrary.NegativeReviewListener;
+import angtrim.com.fivestarslibrary.ReviewListener;
 
 public class MainActivity extends ActionBarActivity {
 
@@ -31,6 +36,22 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
         this.setTitleColor(Color.WHITE);
 
+        SharedPreferences prefs = getPreferences(MODE_PRIVATE);
+        String restoredText = prefs.getString("howlong", null);
+
+        if (restoredText != null)
+        {
+            FiveStarsDialog fiveStarsDialog = new FiveStarsDialog(this, "betcheg@gmail.com");
+
+            fiveStarsDialog.setForceMode(true)
+                    .setUpperBound(3)
+                    .showAfter(0);
+        }
+        else {
+            SharedPreferences.Editor editor = getPreferences(MODE_PRIVATE).edit();
+            editor.putString("howlong", "ok");
+            editor.apply();
+        }
 
 
         button= (Button) findViewById(R.id.b_selectionner);

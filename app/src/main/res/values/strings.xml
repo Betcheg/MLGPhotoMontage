@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MLG Photomontage</string>
+    <string name="app_name">MLG Photomontage Lite</string>
     <string name="action_settings">Settings</string>
     <color name="black">#000000</color>
     <color name="notthatblack">#CC000000</color>

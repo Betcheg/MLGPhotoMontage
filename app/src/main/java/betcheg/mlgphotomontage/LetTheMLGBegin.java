@@ -24,9 +24,12 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.SeekBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.koushikdutta.ion.Ion;
+import com.tjeannin.apprate.AppRate;
+
 import com.navdrawer.SimpleSideDrawer;
 
 import java.io.ByteArrayOutputStream;
@@ -65,6 +68,7 @@ public class LetTheMLGBegin extends ActionBarActivity {
     String imageString;
     Button addMLG;
     Button save;
+    TextView imagecreated;
 
     Button doge;
     Button shrek;
@@ -106,6 +110,7 @@ public class LetTheMLGBegin extends ActionBarActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getSupportActionBar().hide();
 
+
         this.setContentView(R.layout.editor);
         slide = new SimpleSideDrawer(this);
         slide.setLeftBehindContentView(R.layout.dankmemelist);
@@ -118,6 +123,8 @@ public class LetTheMLGBegin extends ActionBarActivity {
         addMLG.setTextColor(Color.parseColor("white"));
         save = (Button) findViewById(R.id.b_savemontage);
         save.setTextColor(Color.parseColor("white"));
+        imagecreated = (TextView) findViewById(R.id.t_imagecreated);
+        imagecreated.setTextColor(Color.parseColor("white"));
 
         // Bouton MLG
         doge = (Button) findViewById(R.id.b_doge);
@@ -176,8 +183,21 @@ public class LetTheMLGBegin extends ActionBarActivity {
             @Override
             public void onClick(View v) {
 
-                    captureScreen();
+                imagecreated.setVisibility(View.VISIBLE);
+                taille.setVisibility(View.GONE);
+                rotation.setVisibility(View.GONE);
+                addMLG.setVisibility(View.GONE);
+                save.setVisibility(View.GONE);
 
+
+                captureScreen();
+
+
+                addMLG.setVisibility(View.VISIBLE);
+                save.setVisibility(View.VISIBLE);
+
+                imagecreated.setVisibility(View.INVISIBLE);
+                nombreCourantImage = 0;
 
             }
 
@@ -552,22 +572,25 @@ public class LetTheMLGBegin extends ActionBarActivity {
 
     private void captureScreen() {
         Date now = new Date();
-        android.text.format.DateFormat.format("yyyyMMdd_hhmmss", now);
+        now.getYear();
+        now.getMonth();
+        now.getDay();
 
         View v = findViewById(R.id.rl);
         v.setDrawingCacheEnabled(true);
         Bitmap bitmap  = v.getDrawingCache();
         String dest = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM)
-                +File.separator+"Camera"+File.separator+"IMG_"+ "test" +".jpg";
-        Log.i("Ecriture", "Writing to: "+dest);
+                +File.separator+"Camera"+File.separator+"MLG_"+
+                now.getDay()+now.getMonth()+now.getYear()+"_"+now.getHours()+now.getMinutes()+now.getSeconds()+".jpg";
         File file = new File(dest);
         try {
             FileOutputStream stream = new FileOutputStream(file);
             bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
             stream.flush();
             stream.close();
+            Toast.makeText(getApplicationContext(), "Saved !", Toast.LENGTH_SHORT).show();
         } catch (IOException e) {
-            Log.e("Erreur", "Error taking screenshot.",e);
+            Toast.makeText(getApplicationContext(), "An error occured", Toast.LENGTH_LONG).show();
         }finally{
             v.setDrawingCacheEnabled(false);
         }

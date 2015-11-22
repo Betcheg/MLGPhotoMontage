@@ -49,6 +49,18 @@
         android:textSize="22dp"
         android:text="+" />
 
+    <TextView
+        android:id="@+id/t_imagecreated"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_alignParentLeft="true"
+        android:textSize="12dp"
+        android:visibility="invisible"
+        android:text="Image created with ''MLG PhotoMontage Lite'' app for Android"/>
+
     <Button
         android:id="@+id/b_invisible"
         android:layout_width="wrap_content"

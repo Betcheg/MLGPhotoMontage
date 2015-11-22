@@ -20,10 +20,18 @@ android {
     }
 }
 
+allprojects {
+    repositories {
+        jcenter()
+        maven { url "https://jitpack.io" }
+    }
+}
+
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.1.0'
     compile 'com.koushikdutta.ion:ion:2.+'
+    compile files('libs/apprate.jar')
+    compile 'com.github.Angtrim:Android-Five-Stars-Library:v3.1'
 }
