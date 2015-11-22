@@ -1,9 +1,11 @@
 package betcheg.mlgphotomontage;
 
+import android.app.ActionBar;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -27,7 +29,9 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        getWindow().getDecorView().setBackgroundColor(Color.GREEN);
+        this.setTitleColor(Color.WHITE);
+
+
 
         button= (Button) findViewById(R.id.b_selectionner);
         button.setTextColor(Color.parseColor("white"));

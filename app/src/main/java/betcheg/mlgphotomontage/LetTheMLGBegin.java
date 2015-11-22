@@ -3,9 +3,12 @@ package betcheg.mlgphotomontage;
 import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.media.MediaScannerConnection;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutCompat;
@@ -26,7 +29,14 @@ import android.widget.Toast;
 import com.koushikdutta.ion.Ion;
 import com.navdrawer.SimpleSideDrawer;
 
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
 import java.util.Arrays;
+import java.util.Date;
 
 /**
  * Created by bastien on 28/10/15.
@@ -165,7 +175,10 @@ public class LetTheMLGBegin extends ActionBarActivity {
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "A faire ... zZz", Toast.LENGTH_SHORT).show();
+
+                    captureScreen();
+
+
             }
 
 
@@ -457,6 +470,8 @@ public class LetTheMLGBegin extends ActionBarActivity {
         save.bringToFront();
     }
 
+
+
     void imageTouchee(int id) {
 
         nombreCourantImage++;
@@ -516,6 +531,8 @@ public class LetTheMLGBegin extends ActionBarActivity {
 
                     if (lastId == iv.getId() && System.currentTimeMillis() - lastclic < 500) {
                         iv.setVisibility(View.GONE);
+                        taille.setVisibility(View.INVISIBLE);
+                        rotation.setVisibility(View.INVISIBLE);
                         nombreCourantImage--;
                     }
 
@@ -531,5 +548,29 @@ public class LetTheMLGBegin extends ActionBarActivity {
                 return true;
             }
         });
+    }
+
+    private void captureScreen() {
+        Date now = new Date();
+        android.text.format.DateFormat.format("yyyyMMdd_hhmmss", now);
+
+        View v = findViewById(R.id.rl);
+        v.setDrawingCacheEnabled(true);
+        Bitmap bitmap  = v.getDrawingCache();
+        String dest = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM)
+                +File.separator+"Camera"+File.separator+"IMG_"+ "test" +".jpg";
+        Log.i("Ecriture", "Writing to: "+dest);
+        File file = new File(dest);
+        try {
+            FileOutputStream stream = new FileOutputStream(file);
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
+            stream.flush();
+            stream.close();
+        } catch (IOException e) {
+            Log.e("Erreur", "Error taking screenshot.",e);
+        }finally{
+            v.setDrawingCacheEnabled(false);
+        }
+        MediaScannerConnection.scanFile(this, new String[]{file.getPath()}, new String[]{"image/jpeg"}, null);
     }
 }
