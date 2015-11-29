@@ -1,4 +1,4 @@
-# MLGPhotoMontage
+# MLG Montage Parody
 
 MLG Photomontage is an Android photo montage app that let you create some great montage parody.
 
