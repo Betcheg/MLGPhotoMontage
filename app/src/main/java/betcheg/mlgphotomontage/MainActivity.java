@@ -1,29 +1,28 @@
 package betcheg.mlgphotomontage;
 
-import android.app.ActionBar;
-import android.content.Context;
+import android.Manifest;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
-import android.graphics.BitmapFactory;
 import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.Toast;
+
 import angtrim.com.fivestarslibrary.FiveStarsDialog;
-import angtrim.com.fivestarslibrary.NegativeReviewListener;
-import angtrim.com.fivestarslibrary.ReviewListener;
 
 public class MainActivity extends ActionBarActivity {
 
+    private static final int WHAT_IS_EVEN_THIS = 69;
     private static int RESULT_LOAD_IMG = 1;
     String imgDecodableString;
 
@@ -39,22 +38,20 @@ public class MainActivity extends ActionBarActivity {
         SharedPreferences prefs = getPreferences(MODE_PRIVATE);
         String restoredText = prefs.getString("howlong", null);
 
-        if (restoredText != null)
-        {
+        if (restoredText != null) {
             FiveStarsDialog fiveStarsDialog = new FiveStarsDialog(this, "betcheg@gmail.com");
 
             fiveStarsDialog.setForceMode(true)
                     .setUpperBound(3)
                     .showAfter(0);
-        }
-        else {
+        } else {
             SharedPreferences.Editor editor = getPreferences(MODE_PRIVATE).edit();
             editor.putString("howlong", "ok");
             editor.apply();
         }
 
 
-        button= (Button) findViewById(R.id.b_selectionner);
+        button = (Button) findViewById(R.id.b_selectionner);
         button.setTextColor(Color.parseColor("white"));
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,11 +65,33 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void loadImagefromGallery(View view) {
-        // Create intent to Open Image applications like Gallery, Google Photos
-        Intent galleryIntent = new Intent(Intent.ACTION_PICK,
-                android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-        // Start the Intent
-        startActivityForResult(galleryIntent, RESULT_LOAD_IMG);
+        // Request permission (23+)
+        if (ContextCompat.checkSelfPermission(this,
+                Manifest.permission.READ_CONTACTS)
+                != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, WHAT_IS_EVEN_THIS);
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case WHAT_IS_EVEN_THIS: {
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+
+                    // Create intent to Open Image applications like Gallery, Google Photos
+                    Intent galleryIntent = new Intent(Intent.ACTION_PICK,
+                            android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                    // Start the Intent
+                    startActivityForResult(galleryIntent, RESULT_LOAD_IMG);
+
+                } else {
+                    Toast.makeText(MainActivity.this, "Y u no permission?", Toast.LENGTH_LONG).show();
+                }
+            }
+        }
     }
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -84,7 +103,7 @@ public class MainActivity extends ActionBarActivity {
                 // Get the Image from data
 
                 Uri selectedImage = data.getData();
-                String[] filePathColumn = { MediaStore.Images.Media.DATA };
+                String[] filePathColumn = {MediaStore.Images.Media.DATA};
 
                 // Get the cursor
                 Cursor cursor = getContentResolver().query(selectedImage,
@@ -95,7 +114,6 @@ public class MainActivity extends ActionBarActivity {
                 int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
                 imgDecodableString = cursor.getString(columnIndex);
                 cursor.close();
-
 
 
                 Intent intent = new Intent(this, LetTheMLGBegin.class);

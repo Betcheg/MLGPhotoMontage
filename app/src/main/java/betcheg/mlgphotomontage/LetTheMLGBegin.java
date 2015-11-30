@@ -1,6 +1,5 @@
 package betcheg.mlgphotomontage;
 
-import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -11,34 +10,22 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.widget.LinearLayoutCompat;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.HorizontalScrollView;
-import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.koushikdutta.ion.Ion;
-import com.tjeannin.apprate.AppRate;
-
 import com.navdrawer.SimpleSideDrawer;
 
-import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.OutputStream;
-import java.util.Arrays;
 import java.util.Date;
 
 /**
@@ -47,15 +34,15 @@ import java.util.Date;
 public class LetTheMLGBegin extends ActionBarActivity {
 
     // Original image size, has to be hardcoded :'(
-    long[] tableauId = { R.drawable.doge, R.drawable.shrek, R.drawable.snoop,R.drawable.hitmarker, R.drawable.eightbit,
-            R.drawable.thuglife, R.drawable.yolo, R.drawable.joint,R.drawable.cana, R.drawable.illuminatitriangle,R.drawable.fedora,
+    long[] tableauId = {R.drawable.doge, R.drawable.shrek, R.drawable.snoop, R.drawable.hitmarker, R.drawable.eightbit,
+            R.drawable.thuglife, R.drawable.yolo, R.drawable.joint, R.drawable.cana, R.drawable.illuminatitriangle, R.drawable.fedora,
             R.drawable.thugcap, R.drawable.goldchain, R.drawable.patrick, R.drawable.getrekt, R.drawable.cash, R.drawable.notdoritochip,
-            R.drawable.notmdcan, R.drawable.trollface, R.drawable.vuvuzela, R.drawable.bong,R.drawable.ak,R.drawable.snipe,
-            R.drawable.dootdoottrumpet, R.drawable.skelet ,R.drawable.peperonni,R.drawable.lenny};
+            R.drawable.notmdcan, R.drawable.trollface, R.drawable.vuvuzela, R.drawable.bong, R.drawable.ak, R.drawable.snipe,
+            R.drawable.dootdoottrumpet, R.drawable.skelet, R.drawable.peperonni, R.drawable.lenny};
 
-    int[] tableauLargeur = {225, 190, 290, 124, 200, 290, 327,240, 128, 127, 250, 280, 205, 159, 299, 300, 167, 108, 225,
+    int[] tableauLargeur = {225, 190, 290, 124, 200, 290, 327, 240, 128, 127, 250, 280, 205, 159, 299, 300, 167, 108, 225,
             250, 115, 296, 290, 184, 207, 240, 383};
-    int[] tableauHauteur = {255, 169, 292, 104, 41, 73, 106, 83  ,128, 117, 172, 209, 230, 240, 189, 300, 190, 200, 209,
+    int[] tableauHauteur = {255, 169, 292, 104, 41, 73, 106, 83, 128, 117, 172, 209, 230, 240, 189, 300, 190, 200, 209,
             89, 280, 84, 87, 194, 279, 233, 140};
 
     int idTableau;
@@ -456,8 +443,6 @@ public class LetTheMLGBegin extends ActionBarActivity {
         });
 
 
-
-
     }
 
     @Override
@@ -491,7 +476,6 @@ public class LetTheMLGBegin extends ActionBarActivity {
     }
 
 
-
     void imageTouchee(int id) {
 
         nombreCourantImage++;
@@ -502,9 +486,9 @@ public class LetTheMLGBegin extends ActionBarActivity {
 
         idTableau = 1;
 
-            for (int idCourant = 0; idCourant < tableauId.length; idCourant++) {
-                if (tableauId[idCourant] == id) idTableau = idCourant;
-            }
+        for (int idCourant = 0; idCourant < tableauId.length; idCourant++) {
+            if (tableauId[idCourant] == id) idTableau = idCourant;
+        }
 
         Log.i("Integer id courant: ", Integer.toString(idTableau));
 
@@ -578,10 +562,10 @@ public class LetTheMLGBegin extends ActionBarActivity {
 
         View v = findViewById(R.id.rl);
         v.setDrawingCacheEnabled(true);
-        Bitmap bitmap  = v.getDrawingCache();
+        Bitmap bitmap = v.getDrawingCache();
         String dest = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM)
-                +File.separator+"Camera"+File.separator+"MLG_"+
-                now.getDay()+now.getMonth()+now.getYear()+"_"+now.getHours()+now.getMinutes()+now.getSeconds()+".jpg";
+                + File.separator + "Camera" + File.separator + "MLG_" +
+                now.getDay() + now.getMonth() + now.getYear() + "_" + now.getHours() + now.getMinutes() + now.getSeconds() + ".jpg";
         File file = new File(dest);
         try {
             FileOutputStream stream = new FileOutputStream(file);
@@ -591,7 +575,7 @@ public class LetTheMLGBegin extends ActionBarActivity {
             Toast.makeText(getApplicationContext(), "Saved !", Toast.LENGTH_SHORT).show();
         } catch (IOException e) {
             Toast.makeText(getApplicationContext(), "An error occured", Toast.LENGTH_LONG).show();
-        }finally{
+        } finally {
             v.setDrawingCacheEnabled(false);
         }
         MediaScannerConnection.scanFile(this, new String[]{file.getPath()}, new String[]{"image/jpeg"}, null);
