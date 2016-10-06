@@ -1,5 +1,6 @@
 # MLG Montage Parody
 
+## More than 250,000+ downloads on Google playstore, thanks everyone ! 
 Download link : https://play.google.com/store/apps/details?id=betcheg.mlgphotomontage
 
 MLG Photomontage is an Android photo montage app that let you create some great montage parody.
